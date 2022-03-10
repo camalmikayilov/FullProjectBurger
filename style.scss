@@ -1,0 +1,1208 @@
+@import './assets/style/all';
+@import './assets/style/header';
+@import './assets/style/footer';
+
+body {
+
+    footer {
+        background-image: url("./assets/images/background-mixed/background-mixed.png");
+    }
+
+    // Start Main
+    main {
+
+        html,
+        body {
+            position: relative;
+            height: 100%;
+        }
+
+        body {
+            background: #eee;
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color: #000;
+            margin: 0;
+            padding: 0;
+        }
+
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .swiper-slide {
+            position: relative;
+
+            .content {
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                .color {
+                    background-image: url("./assets/images/background-slider/color.png");
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    padding: 18px 42px;
+
+                    span {
+                        font-size: 20px;
+                        font-family: "Paytone One", sans-serif;
+                        font-weight: 400;
+                        color: rgb(255, 255, 255);
+                    }
+                }
+
+                h3 {
+                    font-size: 100px;
+                    text-transform: uppercase;
+                    font-weight: 400;
+                    line-height: 100px;
+                    margin-bottom: 27px;
+                    color: rgb(255, 255, 255);
+                    font-family: "Paytone One", sans-serif;
+                }
+
+                h4 {
+                    font-size: 140px;
+                    font-family: Pacifico, cursive;
+                    color: rgb(242, 198, 77);
+                    margin-top: -120px;
+                }
+            }
+        }
+
+        // Start Menu Section
+        #menu {
+            background-image: url("./assets/images/background-mixed/background-mixed.png");
+
+            // Start Menu Container
+            .container {
+                padding: 100px 100px;
+
+                .menu--content {
+                    span {
+                        color: #f2c64d;
+                        font-size: 30px;
+                        font-weight: 400;
+                        margin-bottom: 18px;
+                        display: block;
+                        font-family: "Pacifico", cursive;
+                        font-style: normal;
+                        line-height: 1.5;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+
+                    h3 {
+                        font-size: 50px;
+                        font-weight: 700;
+                        color: #1a0d01;
+                        font-family: "Montserrat", sans-serif;
+                        text-transform: uppercase;
+                        line-height: 1.2em;
+                        margin-bottom: 0.5rem;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                }
+
+                // Start Menu API
+                .menu {
+                    display: flex;
+                    justify-content: space-around;
+                    flex-wrap: wrap;
+                    margin-top: 30px;
+
+                    // Start Menu Card API
+                    .menu--card {
+                        display: flex;
+                        width: 50%;
+                        margin-bottom: 35px;
+                        &:hover{
+                            transform: scale(1.1);
+                        }
+
+                        figure {
+                            border-radius: 50%;
+                            font-size: 1rem;
+                            line-height: 1.5;
+                            color: #212529;
+                            text-align: left;
+                            margin-right: 15px;
+                        }
+
+                        ul {
+                            display: flex;
+                            flex-direction: column;
+                            text-align: left;
+
+                            li {
+                                h3 {
+                                    font-size: 30px;
+                                    color: #1a0d01;
+                                    font-weight: 700;
+                                    font-family: "Montserrat", sans-serif;
+                                    line-height: 1.2em;
+                                    margin-bottom: 0.5rem;
+                                }
+
+                                p {
+                                    font-size: 16px;
+                                    font-weight: 400;
+                                    line-height: 28px;
+                                    margin-top: 16px;
+                                    margin-bottom: 6px;
+                                    color: #6e6e6e;
+                                    font-family: "Montserrat", sans-serif;
+                                }
+
+                                span {
+                                    font-weight: 700;
+                                    font-size: 24px;
+                                    color: #f0542c;
+                                    font-family: "Montserrat", sans-serif;
+                                }
+                            }
+                        }
+                    }
+
+                    // End Menu Card API
+                }
+
+                // End Menu API
+            }
+
+            // End Menu Container
+        }
+
+        // End Menu Section
+
+        // Start Us Section
+        #us {
+            background-image: url("./assets/images/background-mixed/background-mixed.png");
+            padding-bottom: 210px;
+            padding-top: 150px;
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+
+            // Start Us Container
+            .container {
+                padding: 0 100px;
+
+                // Start Us
+                .us {
+                    display: flex;
+
+                    // Start Us Image
+                    .us--image {
+                        position: relative;
+                        width: 55%;
+                        margin-right: 10px;
+
+                        //Start Us Image First
+                        .us-image--first {
+                            width: 88%;
+
+                            img {
+                                width: 100%;
+                            }
+                        }
+
+                        // End Us Image First
+
+                        // Start Us Image Second
+                        .us-image--second {
+                            margin-top: 0;
+                            margin-left: 0;
+                            position: absolute;
+                            right: 50px;
+                            bottom: -30px;
+
+                            img {
+                                width: 100%;
+                            }
+                        }
+
+                        // End Us Image Second
+                    }
+
+                    // End Us Image
+
+                    // Start Us Content
+                    .us--content {
+                        width: 35%;
+
+                        span {
+                            color: rgb(242, 198, 77);
+                            font-size: 30px;
+                            font-weight: 400;
+                            margin-bottom: 18px;
+                            display: block;
+                            font-family: Pacifico, cursive;
+                        }
+
+                        h3 {
+                            font-size: 50px;
+                            font-weight: 700;
+                            color: rgb(26, 13, 1);
+                            font-family: Montserrat, sans-serif;
+                            text-transform: uppercase;
+                            line-height: 1.2em;
+                        }
+
+                        p {
+                            font-size: 16px;
+                            line-height: 28px;
+                            margin-top: 0px;
+                            margin-bottom: 37px;
+                            color: rgb(77, 77, 77);
+                            font-family: Raleway, sans-serif;
+                        }
+                    }
+
+                    // End Us Content
+                }
+
+                // End Us
+            }
+
+            // End Us Container
+        }
+
+        // End Us Section
+
+        // Start President Section
+        #president {
+
+            // Start President
+            .president {
+                display: flex;
+
+                // Start President First
+                .president--first {
+                    width: 50%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    padding-top: 115px;
+                    padding-bottom: 60px;
+                    padding-left: 50px;
+                    position: relative;
+                    background-image: url("./assets/images/burger-president/president-first.png");
+
+
+
+                    span {
+                        font-size: 30px;
+                        font-weight: 700;
+                        color: #f0542c;
+                        font-family: "Montserrat", sans-serif;
+                        margin-bottom: 3px;
+                    }
+
+                    h3 {
+                        font-size: 34px;
+                        color: #fff;
+                        font-weight: 700;
+                    }
+
+                    p {
+                        font-size: 16px;
+                        color: #e8e8e8;
+                        line-height: 28px;
+                        margin-top: 9px;
+                        margin-bottom: 18px;
+                        font-weight: 300;
+                    }
+
+                    a {
+                        border: 1px solid transparent;
+                        text-align: center;
+                        color: #fff;
+                        font-family: "Montserrat", sans-serif;
+                        font-size: 16px;
+                        background-color: #f2c64d;
+                        border-radius: 30px;
+                        padding: 9px 30px;
+                        cursor: pointer;
+                        transition: .5s;
+                    }
+                }
+
+                // End President First
+
+                // Start President Second
+                .president--second {
+                    width: 50%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    padding-top: 115px;
+                    padding-bottom: 60px;
+                    padding-left: 50px;
+                    position: relative;
+                    background-image: url("./assets/images/burger-president/president-second.png");
+
+
+                    span {
+                        font-size: 30px;
+                        font-weight: 700;
+                        color: #f0542c;
+                        font-family: "Montserrat", sans-serif;
+                        margin-bottom: 3px;
+                    }
+
+                    h3 {
+                        font-size: 34px;
+                        color: #fff;
+                        font-weight: 700;
+                    }
+
+                    p {
+                        font-size: 16px;
+                        color: #e8e8e8;
+                        line-height: 28px;
+                        margin-top: 9px;
+                        margin-bottom: 18px;
+                        font-weight: 300;
+                    }
+
+                    a {
+                        border: 1px solid transparent;
+                        text-align: center;
+                        color: #fff;
+                        font-family: "Montserrat", sans-serif;
+                        font-size: 16px;
+                        background-color: #f2c64d;
+                        border-radius: 30px;
+                        padding: 9px 30px;
+                        cursor: pointer;
+                        transition: .5s;
+                    }
+                }
+
+                // End President Second
+            }
+
+            // End President
+        }
+
+        // End President Section
+
+        // Start Video Section
+        #video {
+            background-image: url("./assets/images/burger-video/video.png");
+            padding: 175px 0;
+            width: 100%;
+
+            .video {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+
+                h3 {
+                    font-size: 70px;
+                    color: #fff;
+                    line-height: 80px;
+                    font-weight: 400;
+                    font-family: "Paytone One", sans-serif;
+                    text-transform: uppercase;
+                    margin-bottom: 0;
+                }
+
+                p {
+                    font-size: 24px;
+                    font-family: "Montserrat", sans-serif;
+                    font-weight: 700;
+                    display: block;
+                    margin-top: 14px;
+                    margin-bottom: 36px;
+                    color: #fff;
+                }
+
+                a {
+                    width: 102px;
+                    height: 102px;
+                    background: #f0542c;
+                    line-height: 102px;
+                    font-size: 30px;
+                    color: #fff;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+        }
+
+        // End Video Section
+
+        // Start Comment Section
+        #comment {
+            padding: 100px 100px;
+
+            // Start Comment
+            .comment {
+                span {
+                    color: rgb(242, 198, 77);
+                    font-size: 30px;
+                    font-weight: 400;
+                    margin-bottom: 18px;
+                    display: block;
+                    font-family: Pacifico, cursive;
+                    text-align: center;
+                }
+
+                h3 {
+                    font-size: 50px;
+                    font-weight: 700;
+                    color: rgb(26, 13, 1);
+                    font-family: Montserrat, sans-serif;
+                    text-transform: uppercase;
+                    line-height: 1.2em;
+                    text-align: center;
+                }
+
+                .slider {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    width: 100%;
+
+                    .sld {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        width: 50%;
+
+                        figure {
+                            width: 68px;
+                            height: 68px;
+                            border-radius: 50%;
+                            margin: auto auto 7px;
+                        }
+
+                        p {
+                            color: rgb(4, 14, 39);
+                            font-weight: 400;
+                            font-size: 20px;
+                            line-height: 32px;
+                            margin-top: 0px;
+                            margin-bottom: 13px;
+                            font-family: Raleway, sans-serif;
+                            text-align: center;
+                        }
+
+                        .sld-star {
+                            i {
+                                font-size: 13px;
+                                color: #f2c64d;
+                            }
+                        }
+                    }
+                }
+            }
+
+            // End Comment
+        }
+
+        // End Comment Section
+
+        // Start Finish Section
+        #finish {
+
+            // Start Finish Container
+            .container {
+                padding: 0 100px;
+
+                // Start Finish
+                .finish {
+                    display: flex;
+                    gap: 30px;
+                    padding-top: 50px;
+
+                    // Start Finish One
+                    .finish--one {
+                        display: flex;
+                        gap: 30px;
+
+                        // Start Finish One First
+                        .finish--first {
+                            border-radius: 50%;
+                            position: relative;
+
+                            img {
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                            }
+
+                            i {
+                                font-size: 45px;
+                                color: #fff;
+                            }
+
+                            div {
+                                margin: 15px;
+                                position: absolute;
+                                top: 0;
+                                bottom: 0;
+                                left: 0;
+                                right: 0;
+                                opacity: 0;
+                                color: transparent;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                border-radius: 50%;
+                            }
+
+                            &:hover {
+                                div {
+                                    opacity: 100;
+                                    background: rgba(0, 0, 0, 0.3);
+                                }
+                            }
+                        }
+
+                        // End Finish One First
+
+                        // Start Finish One Second
+                        .finish--second {
+                            border-radius: 50%;
+                            position: relative;
+
+                            img {
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                            }
+
+                            i {
+                                font-size: 45px;
+                                color: #fff;
+                            }
+
+                            div {
+                                margin: 15px;
+                                position: absolute;
+                                top: 0;
+                                bottom: 0;
+                                left: 0;
+                                right: 0;
+                                opacity: 0;
+                                color: transparent;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                border-radius: 50%;
+                            }
+
+                            &:hover {
+                                div {
+                                    opacity: 100;
+                                    background: rgba(0, 0, 0, 0.3);
+                                }
+                            }
+                        }
+
+                        // End Finish One Second
+                    }
+
+                    // End Finish One
+
+                    // Start Finish Two
+                    .finish--two {
+                        display: flex;
+                        gap: 30px;
+
+                        // Start Finish Two Third
+                        .finish--third {
+                            border-radius: 50%;
+                            position: relative;
+
+                            img {
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                            }
+
+                            i {
+                                font-size: 45px;
+                                color: #fff;
+                            }
+
+                            div {
+                                margin: 15px;
+                                position: absolute;
+                                top: 0;
+                                bottom: 0;
+                                left: 0;
+                                right: 0;
+                                opacity: 0;
+                                color: transparent;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                border-radius: 50%;
+                            }
+
+                            &:hover {
+                                div {
+                                    opacity: 100;
+                                    background: rgba(0, 0, 0, 0.3);
+                                }
+                            }
+                        }
+
+                        // End Finish Two Third
+
+                        // Start Finish Two Fourth
+                        .finish--fourth {
+                            border-radius: 50%;
+                            position: relative;
+
+                            img {
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                            }
+
+                            i {
+                                font-size: 45px;
+                                color: #fff;
+                            }
+
+                            div {
+                                margin: 15px;
+                                position: absolute;
+                                top: 0;
+                                bottom: 0;
+                                left: 0;
+                                right: 0;
+                                opacity: 0;
+                                color: transparent;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                border-radius: 50%;
+
+                            }
+
+                            &:hover {
+                                div {
+                                    opacity: 100;
+                                    background: rgba(0, 0, 0, 0.3);
+                                }
+                            }
+                        }
+
+                        // End Finish Two Fourth
+                    }
+
+                    // End Finish Two
+                }
+
+                // End Finish
+            }
+
+            // End Finish Container
+        }
+
+        // End Finish Secton
+    }
+
+    // End Main
+}
+
+@media (max-width: 1024px) {
+    body{
+        main{
+            #us {
+                .container {
+                    padding: 80px 70px;
+                    .us {
+                        .us--image {
+        
+                            //Start Us Image First
+                            .us-image--first {
+                                width: 90%;
+                                img {
+                                    width: 100%;
+                                }
+                            }
+        
+                            // End Us Image First
+        
+                            // Start Us Image Second
+                            .us-image--second {
+                                margin-top: 0;
+                                margin-left: 0;
+                                position: absolute;
+                                right: 0px;
+                                bottom: 140px;
+        
+                                img {
+                                    width: 100%;
+                                }
+                            }
+        
+                            // End Us Image Second
+                        }
+
+                        .us--content{
+                            h3{
+                                font-size: 45px;
+                            }
+                            p
+                            {
+                                font-size: 15px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    body {
+        main {
+            #menu {
+                .container {
+                    .menu--content{
+                        h3{
+                            font-size: 40px;
+                        }
+                    }
+                    .menu {
+                        .menu--card {
+                            display: flex;
+                            justify-content: center;
+                            flex-direction: column;
+
+                            p {
+                                padding-right: 15px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            #president {
+                .president {
+                    display: flex;
+                    flex-direction: column;
+
+                    .president--first {
+                        width: 100%;
+                    }
+
+                    .president--second {
+                        width: 100%;
+                    }
+                }
+            }
+
+            #us {
+                .container {
+                    padding: 0;
+
+                    .us {
+                        .us--image {
+
+                            //Start Us Image First
+                            .us-image--first {
+                                width: 100%;
+
+                                img {
+                                    width: 100%;
+                                }
+                            }
+
+                            // End Us Image First
+
+                            // Start Us Image Second
+                            .us-image--second {
+                                margin-top: 0;
+                                margin-left: 0;
+                                position: absolute;
+                                right: -15px;
+                                bottom: 0px;
+                                width: 60%;
+
+                                img {
+                                    width: 100%;
+                                }
+                            }
+
+                            // End Us Image Second
+                        }
+
+                        .us--content {
+                            margin-left: 15px;
+                            width: 50%;
+                            h3{
+                                font-size: 35px;
+                            }
+                            p{
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            #comment {
+                .comment {
+                    h3 {
+                        font-size: 40px;
+                    }
+                }
+            }
+
+            #finish {
+                .container {
+                    .finish {
+                        display: flex;
+                        flex-direction: column;
+
+                        .finish--one {
+                            width: 100%;
+                        }
+
+                        .finish--two {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        main {
+            .swiper-slide {
+                height: 500px;
+
+                .content {
+                    h3 {
+                        font-size: 40px;
+                        margin-bottom: -15px;
+                    }
+
+                    h4 {
+                        font-size: 50px;
+                        margin-top: -50px;
+                    }
+                }
+            }
+
+            #menu {
+                .container {
+                    padding: 50px 25px;
+
+                    .menu--content {
+                        h3 {
+                            font-size: 24px;
+                        }
+                    }
+
+                    .menu {
+                        display: flex;
+                        flex-direction: column;
+
+                        .menu--card {
+                            width: 100%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            ul{
+                                text-align: center;
+                            }
+                        }
+                    }
+                }
+            }
+
+            #president {
+                .president {
+                    .president--first {
+                        margin-bottom: 10px;
+                        height: 300px;
+                        padding: 5px 25px;
+
+                        span {
+                            margin-top: 25px;
+                        }
+
+                        h3 {
+                            font-size: 20px;
+                            margin-top: 15px;
+                            margin-bottom: 20px;
+                        }
+
+                        p {
+                            font-size: 14px;
+                            line-height: 5px;
+                            z-index: 1;
+                            margin-top: 0;
+                        }
+
+                        a {
+                            margin-top: 55px;
+                        }
+                    }
+
+                    .president--second {
+                        margin-top: 10px;
+                        height: 300px;
+                        padding: 5px 25px;
+
+                        span {
+                            margin-top: 25px;
+                        }
+
+                        h3 {
+                            font-size: 20px;
+                            margin-top: 15px;
+                            margin-bottom: 20px;
+                        }
+
+                        p {
+                            font-size: 14px;
+                            line-height: 5px;
+                            z-index: 1;
+                            margin-top: 0;
+                        }
+
+                        a {
+                            margin-top: 55px;
+                        }
+                    }
+                }
+            }
+
+            #us {
+                .container {
+                    padding: 0 10px!important;
+
+                    .us {
+                        display: flex;
+                        flex-direction: column;
+
+                        .us--image {
+                            width: 100%;
+
+                            //Start Us Image First
+                            .us-image--first {
+                                width: 100%!important;
+
+                                img {
+                                    width: 100%;
+                                }
+                            }
+
+                            // End Us Image First
+
+                            // Start Us Image Second
+                            .us-image--second {
+                                margin-top: 0;
+                                margin-left: 0;
+                                position: absolute;
+                                right: 0px;
+                                bottom: -30px!important;
+
+                                img {
+                                    width: 100%;
+                                }
+                            }
+
+                            // End Us Image Second
+                        }
+
+                        .us--content {
+                            width: 100%;
+                            margin-top: 35px;
+                            h3{
+                                font-size: 25px;
+                            }
+                            p{
+                                font-size: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            #video {
+                .video {
+                    h3 {
+                        font-size: 40px;
+                    }
+
+                    p {
+                        font-size: 15px;
+                    }
+                }
+            }
+
+            #comment {
+                padding: 25px 5px;
+
+                .comment {
+                    width: 100%;
+                   .swiper-slide{
+                       width: 100%;
+                       height: auto;
+                    .sld{
+                        width: 100%;
+                        p{
+                            font-size: 15px;
+                        }
+ 
+                     h3 {
+                         font-size: 30px;
+                     }
+                    }
+                   }
+                }
+            }
+
+            #finish {
+                .container {
+                    .finish {
+                        display: flex;
+                        flex-direction: column;
+
+                        .finish--one {
+                            display: flex;
+                            flex-direction: column;
+
+                            .finish--first {
+                                width: 100%;
+                            }
+
+                            .finish--second {
+                                width: 100%;
+                            }
+                        }
+
+                        .finish--two {
+                            display: flex;
+                            flex-direction: column;
+
+                            .finish--third {
+                                width: 100%;
+                            }
+
+                            .finish--fourth {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 650px) {
+    body{
+        main{
+                 #menu{
+                        .container{
+                            .menu{
+                                .menu--card{
+                                    padding: 0 25px;
+                                }
+                            }
+                        }
+                    }
+            #us {
+                .container {
+                    padding: 60px 40px;
+                    .us {
+                        .us--image {
+        
+                            //Start Us Image First
+                            .us-image--first {
+                                width: 90%;
+                                img {
+                                    width: 100%;
+                                }
+                            }
+        
+                            // End Us Image First
+        
+                            // Start Us Image Second
+                            .us-image--second {
+                                margin-top: 0;
+                                margin-left: 0;
+                                position: absolute;
+                                right: 0px;
+                                bottom: 220px;
+        
+                                img {
+                                    width: 100%;
+                                }
+                            }
+        
+                            // End Us Image Second
+                        }
+
+                        .us--content{
+                            h3{
+                                font-size: 28px;
+                            }
+                            p
+                            {
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,4585 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  width: 100%;
+  position: fixed;
+  background: transparent;
+  z-index: 1000;
+}
+
+header .navBar.active {
+  padding: 24px 0;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  background: #000;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+header .container {
+  padding: 0 5px;
+}
+
+header .container .navBar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  height: 80px;
+}
+
+header .container .navBar .navbar .navbar--list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+}
+
+header .container .navBar .navbar .navbar--list .navbar-list--item a {
+  position: relative;
+  font-size: 18px;
+  font-weight: 400;
+  text-transform: capitalize;
+  color: #fff;
+  font-family: "Paytone One", sans-serif;
+  cursor: pointer;
+}
+
+header .container .navBar .navbar .navbar--list .navbar-list--item a:hover {
+  color: #f2c64d;
+}
+
+header .container .navBar .navbar .navbar--list .navbar-list--item a:hover::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #000;
+  left: 0;
+  bottom: -15px;
+  position: absolute;
+  background: #f2c64d;
+}
+
+header .container .navBar .navbar .navbar--list .navbar-list--item a i {
+  font-size: 10px;
+  text-align: center;
+  padding-left: 5px;
+}
+
+header .container .navBar .navbar .navbar--list .navbar-list--item .active {
+  cursor: pointer;
+  color: #f2c64d;
+  position: relative;
+}
+
+header .container .navBar .navbar .navbar--list .navbar-list--item .active::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #000;
+  left: 0;
+  bottom: -15px;
+  position: absolute;
+  background: #f2c64d;
+}
+
+header .container .navBar .navbar .navbar--list .navbar-list--item .down {
+  position: relative;
+  display: inline-block;
+}
+
+header .container .navBar .navbar .navbar--list .navbar-list--item .down:hover .down--list {
+  display: block;
+}
+
+header .container .navBar .navbar .navbar--list .navbar-list--item .down .down--list {
+  cursor: pointer;
+  display: none;
+  position: absolute;
+  top: 38px;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+header .container .navBar .navbar .navbar--list .navbar-list--item .down .down--list a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+header .container .navBar .navbar .navbar--list .navbar-list--item .down .down--list a:hover {
+  background-color: #ddd;
+}
+
+header .container .navBar .sosial {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 25px;
+}
+
+header .container .navBar .sosial .sosial--icons .sosial-icons--list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 25px;
+}
+
+header .container .navBar .sosial .sosial--icons .sosial-icons--list .sosial-list--item {
+  cursor: pointer;
+}
+
+header .container .navBar .sosial .sosial--icons .sosial-icons--list .sosial-list--item:hover {
+  border: 1px solid #f2c64d;
+  padding: 7px;
+  border-radius: 50%;
+  -webkit-transform: rotateY(360deg);
+          transform: rotateY(360deg);
+}
+
+header .container .navBar .sosial .sosial--icons .sosial-icons--list .sosial-list--item a {
+  color: #fff;
+  font-family: "Paytone One", sans-serif;
+}
+
+header .container .navBar .sosial .sosial--icons .sosial-icons--list .sosial-list--item a:hover {
+  color: #f2c64d;
+}
+
+header .container .navBar .sosial .sosial--number a {
+  background: transparent;
+  padding: 12px 26px;
+  font-size: 18px;
+  font-weight: 400;
+  border: 1px solid #f2c64d;
+  color: #f2c64d;
+  border-radius: 30px;
+  font-family: "Paytone One", sans-serif;
+}
+
+header .container .navBar .sosial .sosial--number a:hover {
+  color: #fff;
+  background-color: #f2c64d;
+}
+
+header .container .mobile--navbar {
+  display: none;
+}
+
+header .container .mobile-navbar--list {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  header {
+    position: relative;
+  }
+  header .container .navBar {
+    display: none;
+  }
+  header .container .mobile--navbar {
+    position: relative;
+    background-color: #4c4c4c;
+    height: 50px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-top: 15px;
+  }
+  header .container .mobile--navbar .mobile-navbar--btn {
+    position: absolute;
+    right: 10px;
+    border: 1px solid black;
+    background: black;
+    padding: 5px;
+    outline: none;
+  }
+  header .container .mobile--navbar .mobile-navbar--btn .mobile-navbar--btn--text {
+    color: #fff;
+    line-height: 1.188em;
+    font-weight: 700;
+    text-shadow: 0 1px 3px #000;
+    font-size: 20px;
+    padding: 0 8px;
+  }
+  header .container .mobile--navbar .mobile-navbar--btn .mobile-navbar--btn--icon {
+    line-height: 1.188em;
+    color: #fff;
+    font-weight: 700;
+    text-shadow: 0 1px 3px #000;
+    font-size: 18px;
+  }
+  header .container .mobile-navbar--list {
+    background-color: #4c4c4c;
+    position: absolute;
+    top: -500px;
+    width: 100%;
+    height: auto;
+    -webkit-transition: .3s;
+    transition: .3s;
+    display: block;
+    z-index: 99999;
+  }
+  header .container .mobile-navbar--list ul li a {
+    color: #fff;
+    font-size: 20px;
+    line-height: 45px;
+    letter-spacing: 0.2px;
+  }
+  header .container .navbar--show {
+    top: 50px;
+  }
+}
+
+footer .container {
+  padding: 0 25px;
+}
+
+footer .container .footer .footer--content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+footer .container .footer .footer--content .newyork {
+  text-align: center;
+  padding-top: 113px;
+  padding-bottom: 100px;
+}
+
+footer .container .footer .footer--content .newyork h3 {
+  margin-bottom: 34px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a0d01;
+  text-transform: capitalize;
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.2em;
+}
+
+footer .container .footer .footer--content .newyork p {
+  color: #6e6e6e;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+  margin-bottom: 13px;
+  font-family: 'Raleway', sans-serif;
+}
+
+footer .container .footer .footer--content .newyork p a {
+  color: #6e6e6e;
+  outline: medium none;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+footer .container .footer .footer--content .newyork a {
+  color: #f0542c;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 28px;
+  font-family: "Montserrat", sans-serif;
+  outline: medium none;
+}
+
+footer .container .footer .footer--content .california {
+  text-align: center;
+}
+
+footer .container .footer .footer--content .california h3 {
+  margin-bottom: 34px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a0d01;
+  text-transform: capitalize;
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.2em;
+}
+
+footer .container .footer .footer--content .california p {
+  color: #6e6e6e;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+  margin-bottom: 13px;
+  font-family: 'Raleway', sans-serif;
+}
+
+footer .container .footer .footer--content .california p a {
+  color: #6e6e6e;
+  outline: medium none;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+footer .container .footer .footer--content .california a {
+  color: #f0542c;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 28px;
+  font-family: "Montserrat", sans-serif;
+  outline: medium none;
+}
+
+footer .container .footer .footer--content .stay h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a0d01;
+  text-transform: capitalize;
+  margin-bottom: 39px;
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.2em;
+}
+
+footer .container .footer .footer--content .stay form {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+footer .container .footer .footer--content .stay form input {
+  width: 100%;
+  height: 50px;
+  background: #f5fbff;
+  padding-left: 20px;
+  font-size: 15px;
+  color: #000;
+  border: 1px solid #e8e8e8;
+  border-radius: 30px;
+  overflow: visible;
+  outline: none;
+}
+
+footer .container .footer .footer--content .stay form input:focus {
+  border: 2px solid #f0542c;
+}
+
+footer .container .footer .footer--content .stay form button {
+  position: absolute;
+  height: 40px;
+  border: none;
+  color: #fff;
+  background: #f0542c;
+  padding: 10px;
+  padding: 0 22px;
+  cursor: pointer;
+  border-radius: 30px;
+  top: 5px;
+  right: 5px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+footer .container .footer .footer--content .stay p {
+  font-size: 16px;
+  color: #6e6e6e;
+  line-height: 26px;
+  font-weight: 400;
+  margin-bottom: 13px;
+}
+
+footer .container .footer .footer--sosial .footer-sosial--icons--list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 15px;
+}
+
+footer .container .footer .footer--sosial .footer-sosial--icons--list .footer-sosial--list--icons--item a {
+  font-size: 18px;
+  color: #f0542c;
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  text-align: center;
+  background: transparent;
+  border-radius: 50%;
+  margin-right: 10px;
+  line-height: 50px;
+  border: 1px dashed #f0542c;
+}
+
+footer .container .footer .footer--sosial .footer-sosial--icons--list .footer-sosial--list--icons--item a:hover {
+  background-color: #f0542c;
+  color: #fff;
+}
+
+footer .container .footer .footer--line {
+  border-top: 1px solid #e7e4e0;
+  margin-top: 100px;
+  margin-bottom: 30px;
+}
+
+footer .container .footer .footer--colorlib {
+  text-align: center;
+  padding-bottom: 20px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+footer .container .footer .footer--colorlib p {
+  font-size: 15px;
+  color: #919191;
+  margin-bottom: 0;
+  font-weight: 500;
+}
+
+footer .container .footer .footer--colorlib p a {
+  color: #fd955d;
+}
+
+@media (max-width: 800px) {
+  footer .container .footer .footer--content .california {
+    padding-bottom: 25px;
+  }
+  footer .container .footer .footer--content .stay {
+    width: 100%;
+    margin-bottom: 100px;
+  }
+}
+
+main #elements .elements .elements--head {
+  background-image: url("./images/elements.png");
+  width: 100%;
+  height: 390px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main #elements .elements .elements--head h3 {
+  font-size: 70px;
+  color: #fff;
+  font-weight: 400;
+  margin-bottom: 0;
+  font-family: "Paytone One", sans-serif;
+  text-transform: uppercase;
+  line-height: 1.2em;
+}
+
+main #text .text {
+  padding: 100px 100px;
+  width: 100%;
+}
+
+main #text .text h3 {
+  margin-bottom: 30px;
+  font-size: 24px;
+  line-height: 1.2em;
+}
+
+main #text .text p {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 28px;
+  color: #4d4d4d;
+  margin-bottom: 13px;
+  font-family: 'Raleway', sans-serif;
+  margin-top: 0;
+}
+
+main #text .text p b {
+  color: #ff5e13;
+}
+
+main #text .text p sup {
+  color: #ff5e13;
+}
+
+main #text .text p sub {
+  color: #ff5e13;
+}
+
+main #text .text p del {
+  color: #ff5e13;
+}
+
+main #text .text p u {
+  color: #ff5e13;
+}
+
+main #button .container {
+  padding: 0 100px;
+  padding-bottom: 100px;
+}
+
+main #button .container .button h3 {
+  margin-bottom: 30px;
+  font-size: 24px;
+  line-height: 1.2em;
+  font-weight: 500;
+  font-family: 'Raleway', sans-serif;
+  color: #1f1f1f;
+}
+
+main #button .container .button .button--list .button-list--one {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+main #button .container .button .button--list .button-list--one .default {
+  color: #415094;
+  background: #f9f9ff;
+  border: 1px solid transparent;
+  display: inline-block;
+  outline: none;
+  line-height: 40px;
+  padding: 0 30px;
+  font-size: .8em;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+main #button .container .button .button--list .button-list--one .primary {
+  color: #fff;
+  background: #ff5e13;
+  border: 1px solid transparent;
+  display: inline-block;
+  outline: none;
+  line-height: 40px;
+  padding: 0 30px;
+  font-size: .8em;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+main #button .container .button .button--list .button-list--one .primary:hover {
+  color: #ff5e13;
+  background: #fff;
+  border: 1px solid #ff5e13;
+}
+
+main #button .container .button .button--list .button-list--one .succes {
+  color: #fff;
+  background: #4cd3e3;
+  border: 1px solid transparent;
+  display: inline-block;
+  outline: none;
+  line-height: 40px;
+  padding: 0 30px;
+  font-size: .8em;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+main #button .container .button .button--list .button-list--one .succes:hover {
+  color: #4cd3e3;
+  background: #fff;
+  border: 1px solid #4cd3e3;
+}
+
+main #button .container .button .button--list .button-list--one .info {
+  color: #fff;
+  background: #38a4ff;
+  border: 1px solid transparent;
+  display: inline-block;
+  outline: none;
+  line-height: 40px;
+  padding: 0 30px;
+  font-size: .8em;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+main #button .container .button .button--list .button-list--one .info:hover {
+  color: #38a4ff;
+  background: #fff;
+  border: 1px solid #38a4ff;
+}
+
+main #button .container .button .button--list .button-list--one .warning {
+  color: #fff;
+  background: #f4e700;
+  border: 1px solid transparent;
+  display: inline-block;
+  outline: none;
+  line-height: 40px;
+  padding: 0 30px;
+  font-size: .8em;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+main #button .container .button .button--list .button-list--one .warning:hover {
+  color: #f4e700;
+  background: #fff;
+  border: 1px solid #f4e700;
+}
+
+main #button .container .button .button--list .button-list--one .danger {
+  color: #fff;
+  background: #f44a40;
+  border: 1px solid transparent;
+  display: inline-block;
+  outline: none;
+  line-height: 40px;
+  padding: 0 30px;
+  font-size: .8em;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+main #button .container .button .button--list .button-list--one .danger:hover {
+  color: #f44a40;
+  background: #fff;
+  border: 1px solid #f44a40;
+}
+
+main #button .container .button .button--list .button-list--one .link {
+  color: #415094;
+  border: 1px solid #f9f9ff;
+  background: #fff;
+  display: inline-block;
+  outline: none;
+  line-height: 40px;
+  padding: 0 30px;
+  font-size: .8em;
+  text-align: center;
+  text-decoration: underline;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+main #button .container .button .button--list .button-list--one .disable {
+  background: #f9f9ff;
+  border: 1px solid transparent;
+  cursor: not-allowed;
+  display: inline-block;
+  outline: none;
+  line-height: 40px;
+  padding: 0 30px;
+  font-size: .8em;
+  text-align: center;
+  text-decoration: underline;
+  font-weight: 500;
+  margin-right: 0;
+  margin-top: 10px;
+}
+
+main #button .container .button .button--list .button-list--two {
+  margin-top: 10px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+main #button .container .button .button--list .button-list--two .default {
+  color: #415094;
+  background: #f9f9ff;
+  border: 1px solid transparent;
+  display: inline-block;
+  outline: none;
+  line-height: 40px;
+  padding: 0 30px;
+  font-size: .8em;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+main #button .container .button .button--list .button-list--two .primary {
+  color: #ff5e13;
+  background: #fff;
+  border: 1px solid #ff5e13;
+  display: inline-block;
+  outline: none;
+  line-height: 40px;
+  padding: 0 30px;
+  font-size: .8em;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+main #button .container .button .button--list .button-list--two .primary:hover {
+  color: #fff;
+  background: #ff5e13;
+  border: 1px solid transparent;
+}
+
+main #button .container .button .button--list .button-list--two .succes {
+  color: #4cd3e3;
+  background: #fff;
+  border: 1px solid #4cd3e3;
+  display: inline-block;
+  outline: none;
+  line-height: 40px;
+  padding: 0 30px;
+  font-size: .8em;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+main #button .container .button .button--list .button-list--two .succes:hover {
+  color: #fff;
+  background: #4cd3e3;
+  border: 1px solid transparent;
+}
+
+main #button .container .button .button--list .button-list--two .info {
+  color: #38a4ff;
+  background: #fff;
+  border: 1px solid #38a4ff;
+  display: inline-block;
+  outline: none;
+  line-height: 40px;
+  padding: 0 30px;
+  font-size: .8em;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+main #button .container .button .button--list .button-list--two .info:hover {
+  color: #fff;
+  background: #38a4ff;
+  border: 1px solid transparent;
+}
+
+main #button .container .button .button--list .button-list--two .warning {
+  color: #f4e700;
+  background: #fff;
+  border: 1px solid #f4e700;
+  display: inline-block;
+  outline: none;
+  line-height: 40px;
+  padding: 0 30px;
+  font-size: .8em;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+main #button .container .button .button--list .button-list--two .warning:hover {
+  color: #fff;
+  background: #f4e700;
+  border: 1px solid transparent;
+}
+
+main #button .container .button .button--list .button-list--two .danger {
+  color: #f44a40;
+  background: #fff;
+  border: 1px solid #f44a40;
+  display: inline-block;
+  outline: none;
+  line-height: 40px;
+  padding: 0 30px;
+  font-size: .8em;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+main #button .container .button .button--list .button-list--two .danger:hover {
+  color: #fff;
+  background: #f44a40;
+  border: 1px solid transparent;
+}
+
+main #button .container .button .button--list .button-list--two .link {
+  color: #415094;
+  border: 1px solid #f9f9ff;
+  background: #fff;
+  display: inline-block;
+  outline: none;
+  line-height: 40px;
+  padding: 0 30px;
+  font-size: .8em;
+  text-align: center;
+  text-decoration: underline;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+main #button .container .button .button--list .button-list--two .disable {
+  background: #f9f9ff;
+  border: 1px solid transparent;
+  cursor: not-allowed;
+  display: inline-block;
+  outline: none;
+  line-height: 40px;
+  padding: 0 30px;
+  font-size: .8em;
+  text-align: center;
+  text-decoration: underline;
+  font-weight: 500;
+  margin-right: 0;
+  margin-top: 10px;
+}
+
+main #button .container .button .button--list .button-list--three {
+  margin-top: 10px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+main #button .container .button .button--list .button-list--three .default {
+  color: #415094;
+  background: #f9f9ff;
+  border: 1px solid transparent;
+  display: inline-block;
+  outline: none;
+  line-height: 40px;
+  padding: 0 30px;
+  font-size: .8em;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+main #button .container .button .button--list .button-list--three .primary {
+  color: #fff;
+  background: #ff5e13;
+  border: 1px solid transparent;
+  display: inline-block;
+  outline: none;
+  line-height: 40px;
+  padding: 0 30px;
+  font-size: .8em;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+main #button .container .button .button--list .button-list--three .primary:hover {
+  color: #ff5e13;
+  background: #fff;
+  border: 1px solid #ff5e13;
+}
+
+main #button .container .button .button--list .button-list--three .succes {
+  color: #fff;
+  background: #4cd3e3;
+  border: 1px solid transparent;
+  display: inline-block;
+  outline: none;
+  line-height: 40px;
+  padding: 0 30px;
+  font-size: .8em;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+main #button .container .button .button--list .button-list--three .succes:hover {
+  color: #4cd3e3;
+  background: #fff;
+  border: 1px solid #4cd3e3;
+}
+
+main #button .container .button .button--list .button-list--three .info {
+  color: #fff;
+  background: #38a4ff;
+  border: 1px solid transparent;
+  display: inline-block;
+  outline: none;
+  line-height: 40px;
+  padding: 0 30px;
+  font-size: .8em;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+main #button .container .button .button--list .button-list--three .info:hover {
+  color: #38a4ff;
+  background: #fff;
+  border: 1px solid #38a4ff;
+}
+
+main #button .container .button .button--list .button-list--three .warning {
+  color: #fff;
+  background: #f4e700;
+  border: 1px solid transparent;
+  display: inline-block;
+  outline: none;
+  line-height: 40px;
+  padding: 0 30px;
+  font-size: .8em;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+main #button .container .button .button--list .button-list--three .warning:hover {
+  color: #f4e700;
+  background: #fff;
+  border: 1px solid #f4e700;
+}
+
+main #button .container .button .button--list .button-list--three .danger {
+  color: #fff;
+  background: #f44a40;
+  border: 1px solid transparent;
+  display: inline-block;
+  outline: none;
+  line-height: 40px;
+  padding: 0 30px;
+  font-size: .8em;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+main #button .container .button .button--list .button-list--three .danger:hover {
+  color: #f44a40;
+  background: #fff;
+  border: 1px solid #f44a40;
+}
+
+main #button .container .button .button--list .button-list--three .link {
+  color: #415094;
+  border: 1px solid #f9f9ff;
+  background: #fff;
+  display: inline-block;
+  outline: none;
+  line-height: 40px;
+  padding: 0 30px;
+  font-size: .8em;
+  text-align: center;
+  text-decoration: underline;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+main #button .container .button .button--list .button-list--three .disable {
+  background: #f9f9ff;
+  border: 1px solid transparent;
+  cursor: not-allowed;
+  display: inline-block;
+  outline: none;
+  line-height: 40px;
+  padding: 0 30px;
+  font-size: .8em;
+  text-align: center;
+  text-decoration: underline;
+  font-weight: 500;
+  margin-right: 0;
+  margin-top: 10px;
+}
+
+main #button .container .button .button--list .button-list--four {
+  margin-top: 10px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+main #button .container .button .button--list .button-list--four .default {
+  color: #415094;
+  background: #f9f9ff;
+  border: 1px solid transparent;
+  display: inline-block;
+  outline: none;
+  line-height: 40px;
+  padding: 0 30px;
+  font-size: .8em;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+main #button .container .button .button--list .button-list--four .primary {
+  color: #ff5e13;
+  background: #fff;
+  border: 1px solid #ff5e13;
+  display: inline-block;
+  outline: none;
+  line-height: 40px;
+  padding: 0 30px;
+  font-size: .8em;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+main #button .container .button .button--list .button-list--four .primary:hover {
+  color: #fff;
+  background: #ff5e13;
+  border: 1px solid transparent;
+}
+
+main #button .container .button .button--list .button-list--four .succes {
+  color: #4cd3e3;
+  background: #fff;
+  border: 1px solid #4cd3e3;
+  display: inline-block;
+  outline: none;
+  line-height: 40px;
+  padding: 0 30px;
+  font-size: .8em;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+main #button .container .button .button--list .button-list--four .succes:hover {
+  color: #fff;
+  background: #4cd3e3;
+  border: 1px solid transparent;
+}
+
+main #button .container .button .button--list .button-list--four .info {
+  color: #38a4ff;
+  background: #fff;
+  border: 1px solid #38a4ff;
+  display: inline-block;
+  outline: none;
+  line-height: 40px;
+  padding: 0 30px;
+  font-size: .8em;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+main #button .container .button .button--list .button-list--four .info:hover {
+  color: #fff;
+  background: #38a4ff;
+  border: 1px solid transparent;
+}
+
+main #button .container .button .button--list .button-list--four .warning {
+  color: #f4e700;
+  background: #fff;
+  border: 1px solid #f4e700;
+  display: inline-block;
+  outline: none;
+  line-height: 40px;
+  padding: 0 30px;
+  font-size: .8em;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+main #button .container .button .button--list .button-list--four .warning:hover {
+  color: #fff;
+  background: #f4e700;
+  border: 1px solid transparent;
+}
+
+main #button .container .button .button--list .button-list--four .danger {
+  color: #f44a40;
+  background: #fff;
+  border: 1px solid #f44a40;
+  display: inline-block;
+  outline: none;
+  line-height: 40px;
+  padding: 0 30px;
+  font-size: .8em;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+main #button .container .button .button--list .button-list--four .danger:hover {
+  color: #fff;
+  background: #f44a40;
+  border: 1px solid transparent;
+}
+
+main #button .container .button .button--list .button-list--four .link {
+  color: #415094;
+  border: 1px solid #f9f9ff;
+  background: #fff;
+  display: inline-block;
+  outline: none;
+  line-height: 40px;
+  padding: 0 30px;
+  font-size: .8em;
+  text-align: center;
+  text-decoration: underline;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+main #button .container .button .button--list .button-list--four .disable {
+  background: #f9f9ff;
+  border: 1px solid transparent;
+  cursor: not-allowed;
+  display: inline-block;
+  outline: none;
+  line-height: 40px;
+  padding: 0 30px;
+  font-size: .8em;
+  text-align: center;
+  text-decoration: underline;
+  font-weight: 500;
+  margin-right: 0;
+  margin-top: 10px;
+}
+
+main #button .container .button .button--list .button-list--five {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+main #button .container .button .button--list .button-list--five .default {
+  color: #415094;
+  background: #f9f9ff;
+  border: 1px solid transparent;
+  display: inline-block;
+  outline: none;
+  line-height: 40px;
+  padding: 0 30px;
+  font-size: .8em;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 10px;
+  border-radius: 20px;
+}
+
+main #button .container .button .button--list .button-list--five .primary {
+  color: #fff;
+  background: #ff5e13;
+  border: 1px solid transparent;
+  display: inline-block;
+  outline: none;
+  line-height: 40px;
+  padding: 0 30px;
+  font-size: .8em;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 10px;
+  border-radius: 20px;
+}
+
+main #button .container .button .button--list .button-list--five .primary:hover {
+  color: #ff5e13;
+  background: #fff;
+  border: 1px solid #ff5e13;
+}
+
+main #button .container .button .button--list .button-list--five .succes {
+  color: #fff;
+  background: #4cd3e3;
+  border: 1px solid transparent;
+  display: inline-block;
+  outline: none;
+  line-height: 40px;
+  padding: 0 30px;
+  font-size: .8em;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 10px;
+  border-radius: 20px;
+}
+
+main #button .container .button .button--list .button-list--five .succes:hover {
+  color: #4cd3e3;
+  background: #fff;
+  border: 1px solid #4cd3e3;
+}
+
+main #button .container .button .button--list .button-list--five .info {
+  color: #fff;
+  background: #38a4ff;
+  border: 1px solid transparent;
+  display: inline-block;
+  outline: none;
+  line-height: 40px;
+  padding: 0 30px;
+  font-size: .8em;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 10px;
+  border-radius: 20px;
+}
+
+main #button .container .button .button--list .button-list--five .info:hover {
+  color: #38a4ff;
+  background: #fff;
+  border: 1px solid #38a4ff;
+}
+
+main #button .container .button .button--list .button-list--five .warning {
+  color: #fff;
+  background: #f4e700;
+  border: 1px solid transparent;
+  display: inline-block;
+  outline: none;
+  line-height: 40px;
+  padding: 0 30px;
+  font-size: .8em;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 10px;
+  border-radius: 20px;
+}
+
+main #button .container .button .button--list .button-list--five .warning:hover {
+  color: #f4e700;
+  background: #fff;
+  border: 1px solid #f4e700;
+}
+
+main #button .container .button .button--list .button-list--five .danger {
+  color: #fff;
+  background: #f44a40;
+  border: 1px solid transparent;
+  display: inline-block;
+  outline: none;
+  line-height: 40px;
+  padding: 0 30px;
+  font-size: .8em;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 10px;
+  border-radius: 20px;
+}
+
+main #button .container .button .button--list .button-list--five .danger:hover {
+  color: #f44a40;
+  background: #fff;
+  border: 1px solid #f44a40;
+}
+
+main #button .container .button .button--list .button-list--five .link {
+  color: #415094;
+  border: 1px solid #f9f9ff;
+  background: #fff;
+  display: inline-block;
+  outline: none;
+  line-height: 40px;
+  padding: 0 30px;
+  font-size: .8em;
+  text-align: center;
+  text-decoration: underline;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 10px;
+  border-radius: 20px;
+}
+
+main #button .container .button .button--list .button-list--five .disable {
+  background: #f9f9ff;
+  border: 1px solid transparent;
+  cursor: not-allowed;
+  display: inline-block;
+  outline: none;
+  line-height: 40px;
+  padding: 0 30px;
+  font-size: .8em;
+  text-align: center;
+  text-decoration: underline;
+  font-weight: 500;
+  margin-right: 0;
+  margin-top: 10px;
+  border-radius: 20px;
+}
+
+main #button .container .button .button--list .button-list--six {
+  margin-top: 10px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+main #button .container .button .button--list .button-list--six .default {
+  color: #415094;
+  background: #f9f9ff;
+  border: 1px solid transparent;
+  display: inline-block;
+  outline: none;
+  line-height: 40px;
+  padding: 0 30px;
+  font-size: .8em;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 10px;
+  border-radius: 20px;
+}
+
+main #button .container .button .button--list .button-list--six .primary {
+  color: #ff5e13;
+  background: #fff;
+  border: 1px solid #ff5e13;
+  display: inline-block;
+  outline: none;
+  line-height: 40px;
+  padding: 0 30px;
+  font-size: .8em;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 10px;
+  border-radius: 20px;
+}
+
+main #button .container .button .button--list .button-list--six .primary:hover {
+  color: #fff;
+  background: #ff5e13;
+  border: 1px solid transparent;
+}
+
+main #button .container .button .button--list .button-list--six .succes {
+  color: #4cd3e3;
+  background: #fff;
+  border: 1px solid #4cd3e3;
+  display: inline-block;
+  outline: none;
+  line-height: 40px;
+  padding: 0 30px;
+  font-size: .8em;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 10px;
+  border-radius: 20px;
+}
+
+main #button .container .button .button--list .button-list--six .succes:hover {
+  color: #fff;
+  background: #4cd3e3;
+  border: 1px solid transparent;
+}
+
+main #button .container .button .button--list .button-list--six .info {
+  color: #38a4ff;
+  background: #fff;
+  border: 1px solid #38a4ff;
+  display: inline-block;
+  outline: none;
+  line-height: 40px;
+  padding: 0 30px;
+  font-size: .8em;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 10px;
+  border-radius: 20px;
+}
+
+main #button .container .button .button--list .button-list--six .info:hover {
+  color: #fff;
+  background: #38a4ff;
+  border: 1px solid transparent;
+}
+
+main #button .container .button .button--list .button-list--six .warning {
+  color: #f4e700;
+  background: #fff;
+  border: 1px solid #f4e700;
+  display: inline-block;
+  outline: none;
+  line-height: 40px;
+  padding: 0 30px;
+  font-size: .8em;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 10px;
+  border-radius: 20px;
+}
+
+main #button .container .button .button--list .button-list--six .warning:hover {
+  color: #fff;
+  background: #f4e700;
+  border: 1px solid transparent;
+}
+
+main #button .container .button .button--list .button-list--six .danger {
+  color: #f44a40;
+  background: #fff;
+  border: 1px solid #f44a40;
+  display: inline-block;
+  outline: none;
+  line-height: 40px;
+  padding: 0 30px;
+  font-size: .8em;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 10px;
+  border-radius: 20px;
+}
+
+main #button .container .button .button--list .button-list--six .danger:hover {
+  color: #fff;
+  background: #f44a40;
+  border: 1px solid transparent;
+}
+
+main #button .container .button .button--list .button-list--six .link {
+  color: #415094;
+  border: 1px solid #f9f9ff;
+  background: #fff;
+  display: inline-block;
+  outline: none;
+  line-height: 40px;
+  padding: 0 30px;
+  font-size: .8em;
+  text-align: center;
+  text-decoration: underline;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 10px;
+  border-radius: 20px;
+}
+
+main #button .container .button .button--list .button-list--six .disable {
+  background: #f9f9ff;
+  border: 1px solid transparent;
+  cursor: not-allowed;
+  display: inline-block;
+  outline: none;
+  line-height: 40px;
+  padding: 0 30px;
+  font-size: .8em;
+  text-align: center;
+  text-decoration: underline;
+  font-weight: 500;
+  margin-right: 0;
+  margin-top: 10px;
+  border-radius: 20px;
+}
+
+main #button .container .button .button--list .button-list--seven {
+  margin-top: 10px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+main #button .container .button .button--list .button-list--seven .default {
+  color: #415094;
+  background: #f9f9ff;
+  border: 1px solid transparent;
+  display: inline-block;
+  outline: none;
+  line-height: 40px;
+  padding: 0 30px;
+  font-size: .8em;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 10px;
+  border-radius: 20px;
+}
+
+main #button .container .button .button--list .button-list--seven .primary {
+  color: #fff;
+  background: #ff5e13;
+  border: 1px solid transparent;
+  display: inline-block;
+  outline: none;
+  line-height: 40px;
+  padding: 0 30px;
+  font-size: .8em;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 10px;
+  border-radius: 20px;
+}
+
+main #button .container .button .button--list .button-list--seven .primary:hover {
+  color: #ff5e13;
+  background: #fff;
+  border: 1px solid #ff5e13;
+}
+
+main #button .container .button .button--list .button-list--seven .succes {
+  color: #fff;
+  background: #4cd3e3;
+  border: 1px solid transparent;
+  display: inline-block;
+  outline: none;
+  line-height: 40px;
+  padding: 0 30px;
+  font-size: .8em;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 10px;
+  border-radius: 20px;
+}
+
+main #button .container .button .button--list .button-list--seven .succes:hover {
+  color: #4cd3e3;
+  background: #fff;
+  border: 1px solid #4cd3e3;
+}
+
+main #button .container .button .button--list .button-list--seven .info {
+  color: #fff;
+  background: #38a4ff;
+  border: 1px solid transparent;
+  display: inline-block;
+  outline: none;
+  line-height: 40px;
+  padding: 0 30px;
+  font-size: .8em;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 10px;
+  border-radius: 20px;
+}
+
+main #button .container .button .button--list .button-list--seven .info:hover {
+  color: #38a4ff;
+  background: #fff;
+  border: 1px solid #38a4ff;
+}
+
+main #button .container .button .button--list .button-list--seven .warning {
+  color: #fff;
+  background: #f4e700;
+  border: 1px solid transparent;
+  display: inline-block;
+  outline: none;
+  line-height: 40px;
+  padding: 0 30px;
+  font-size: .8em;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 10px;
+  border-radius: 20px;
+}
+
+main #button .container .button .button--list .button-list--seven .warning:hover {
+  color: #f4e700;
+  background: #fff;
+  border: 1px solid #f4e700;
+}
+
+main #button .container .button .button--list .button-list--seven .danger {
+  color: #fff;
+  background: #f44a40;
+  border: 1px solid transparent;
+  display: inline-block;
+  outline: none;
+  line-height: 40px;
+  padding: 0 30px;
+  font-size: .8em;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 10px;
+  border-radius: 20px;
+}
+
+main #button .container .button .button--list .button-list--seven .danger:hover {
+  color: #f44a40;
+  background: #fff;
+  border: 1px solid #f44a40;
+}
+
+main #button .container .button .button--list .button-list--eight {
+  margin-top: 10px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+main #button .container .button .button--list .button-list--eight .default {
+  color: #415094;
+  background: #f9f9ff;
+  border: 1px solid transparent;
+  display: inline-block;
+  outline: none;
+  line-height: 40px;
+  padding: 0 30px;
+  font-size: .8em;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 10px;
+  border-radius: 20px;
+}
+
+main #button .container .button .button--list .button-list--eight .primary {
+  color: #ff5e13;
+  background: #fff;
+  border: 1px solid #ff5e13;
+  display: inline-block;
+  outline: none;
+  line-height: 40px;
+  padding: 0 30px;
+  font-size: .8em;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 10px;
+  border-radius: 20px;
+}
+
+main #button .container .button .button--list .button-list--eight .primary:hover {
+  color: #fff;
+  background: #ff5e13;
+  border: 1px solid transparent;
+}
+
+main #button .container .button .button--list .button-list--eight .succes {
+  color: #4cd3e3;
+  background: #fff;
+  border: 1px solid #4cd3e3;
+  display: inline-block;
+  outline: none;
+  line-height: 40px;
+  padding: 0 30px;
+  font-size: .8em;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 10px;
+  border-radius: 20px;
+}
+
+main #button .container .button .button--list .button-list--eight .succes:hover {
+  color: #fff;
+  background: #4cd3e3;
+  border: 1px solid transparent;
+}
+
+main #button .container .button .button--list .button-list--eight .info {
+  color: #38a4ff;
+  background: #fff;
+  border: 1px solid #38a4ff;
+  display: inline-block;
+  outline: none;
+  line-height: 40px;
+  padding: 0 30px;
+  font-size: .8em;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 10px;
+  border-radius: 20px;
+}
+
+main #button .container .button .button--list .button-list--eight .info:hover {
+  color: #fff;
+  background: #38a4ff;
+  border: 1px solid transparent;
+}
+
+main #button .container .button .button--list .button-list--eight .warning {
+  color: #f4e700;
+  background: #fff;
+  border: 1px solid #f4e700;
+  display: inline-block;
+  outline: none;
+  line-height: 40px;
+  padding: 0 30px;
+  font-size: .8em;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 10px;
+  border-radius: 20px;
+}
+
+main #button .container .button .button--list .button-list--eight .warning:hover {
+  color: #fff;
+  background: #f4e700;
+  border: 1px solid transparent;
+}
+
+main #button .container .button .button--list .button-list--eight .danger {
+  color: #f44a40;
+  background: #fff;
+  border: 1px solid #f44a40;
+  display: inline-block;
+  outline: none;
+  line-height: 40px;
+  padding: 0 30px;
+  font-size: .8em;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 10px;
+  border-radius: 20px;
+}
+
+main #button .container .button .button--list .button-list--eight .danger:hover {
+  color: #fff;
+  background: #f44a40;
+  border: 1px solid transparent;
+}
+
+main #button .container .button .button--list .button-list--nine {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+main #button .container .button .button--list .button-list--nine .extra {
+  color: #fff;
+  background: #ff5e13;
+  border: 1px solid transparent;
+  padding: 0 40px;
+  line-height: 50px;
+  margin-right: 10px;
+  margin-top: 10px;
+  display: inline-block;
+  outline: none;
+  font-size: .8em;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+main #button .container .button .button--list .button-list--nine .extra:hover {
+  color: #ff5e13;
+  background: #fff;
+  border: 1px solid #ff5e13;
+}
+
+main #button .container .button .button--list .button-list--nine .large {
+  color: #fff;
+  background: #4cd3e3;
+  border: 1px solid transparent;
+  line-height: 45px;
+  margin-right: 10px;
+  margin-top: 10px;
+  display: inline-block;
+  outline: none;
+  line-height: 40px;
+  padding: 0 30px;
+  font-size: .8em;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+main #button .container .button .button--list .button-list--nine .large:hover {
+  color: #4cd3e3;
+  background: #fff;
+  border: 1px solid #4cd3e3;
+}
+
+main #button .container .button .button--list .button-list--nine .default {
+  color: #fff;
+  background: #ff5e13;
+  border: 1px solid transparent;
+  margin-right: 10px;
+  margin-top: 10px;
+  display: inline-block;
+  outline: none;
+  line-height: 40px;
+  padding: 0 30px;
+  font-size: .8em;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  -webkit-transition: all .3s ease 0s;
+  transition: all .3s ease 0s;
+}
+
+main #button .container .button .button--list .button-list--nine .default:hover {
+  color: #ff5e13;
+  background: #fff;
+  border: 1px solid #ff5e13;
+}
+
+main #button .container .button .button--list .button-list--nine .medium {
+  color: #fff;
+  background: #4cd3e3;
+  border: 1px solid transparent;
+  margin-right: 10px;
+  margin-top: 10px;
+  display: inline-block;
+  outline: none;
+  line-height: 40px;
+  padding: 0 30px;
+  font-size: .8em;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  -webkit-transition: all .3s ease 0s;
+  transition: all .3s ease 0s;
+  line-height: 30px;
+}
+
+main #button .container .button .button--list .button-list--nine .medium:hover {
+  color: #4cd3e3;
+  background: #fff;
+  border: 1px solid #4cd3e3;
+}
+
+main #button .container .button .button--list .button-list--nine .small {
+  color: #fff;
+  background: #ff5e13;
+  border: 1px solid transparent;
+  margin-right: 0;
+  margin-top: 10px;
+  display: inline-block;
+  outline: none;
+  line-height: 40px;
+  padding: 0 30px;
+  font-size: .8em;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  -webkit-transition: all .3s ease 0s;
+  transition: all .3s ease 0s;
+  line-height: 25px;
+}
+
+main #button .container .button .button--list .button-list--nine .small:hover {
+  color: #ff5e13;
+  background: #fff;
+  border: 1px solid #ff5e13;
+}
+
+main #button .container .button .button--list .button-list--ten {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+main #button .container .button .button--list .button-list--ten .extra {
+  color: #ff5e13;
+  background: #fff;
+  border: 1px solid #ff5e13;
+  padding: 0 40px;
+  line-height: 50px;
+  margin-right: 10px;
+  margin-top: 10px;
+  display: inline-block;
+  outline: none;
+  font-size: .8em;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+main #button .container .button .button--list .button-list--ten .extra:hover {
+  color: #fff;
+  background: #ff5e13;
+  border: 1px solid transparent;
+}
+
+main #button .container .button .button--list .button-list--ten .large {
+  color: #4cd3e3;
+  background: #fff;
+  border: 1px solid #4cd3e3;
+  line-height: 45px;
+  margin-right: 10px;
+  margin-top: 10px;
+  display: inline-block;
+  outline: none;
+  line-height: 40px;
+  padding: 0 30px;
+  font-size: .8em;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+main #button .container .button .button--list .button-list--ten .large:hover {
+  color: #fff;
+  background: #4cd3e3;
+  border: 1px solid transparent;
+}
+
+main #button .container .button .button--list .button-list--ten .default {
+  color: #ff5e13;
+  background: #fff;
+  border: 1px solid #ff5e13;
+  margin-right: 10px;
+  margin-top: 10px;
+  display: inline-block;
+  outline: none;
+  line-height: 40px;
+  padding: 0 30px;
+  font-size: .8em;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  -webkit-transition: all .3s ease 0s;
+  transition: all .3s ease 0s;
+}
+
+main #button .container .button .button--list .button-list--ten .default:hover {
+  color: #fff;
+  background: #ff5e13;
+  border: 1px solid transparent;
+}
+
+main #button .container .button .button--list .button-list--ten .medium {
+  color: #4cd3e3;
+  background: #fff;
+  border: 1px solid #4cd3e3;
+  margin-right: 10px;
+  margin-top: 10px;
+  display: inline-block;
+  outline: none;
+  line-height: 40px;
+  padding: 0 30px;
+  font-size: .8em;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  -webkit-transition: all .3s ease 0s;
+  transition: all .3s ease 0s;
+  line-height: 30px;
+}
+
+main #button .container .button .button--list .button-list--ten .medium:hover {
+  color: #fff;
+  background: #4cd3e3;
+  border: 1px solid transparent;
+}
+
+main #button .container .button .button--list .button-list--ten .small {
+  color: #ff5e13;
+  background: #fff;
+  border: 1px solid #ff5e13;
+  margin-right: 0;
+  margin-top: 10px;
+  display: inline-block;
+  outline: none;
+  line-height: 40px;
+  padding: 0 30px;
+  font-size: .8em;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  -webkit-transition: all .3s ease 0s;
+  transition: all .3s ease 0s;
+  line-height: 25px;
+}
+
+main #button .container .button .button--list .button-list--ten .small:hover {
+  color: #fff;
+  background: #ff5e13;
+  border: 1px solid transparent;
+}
+
+main #left .left {
+  padding: 0 100px;
+}
+
+main #left .left h3 {
+  margin-bottom: 30px;
+  line-height: 1.2em;
+  font-size: 24px;
+  font-family: 'Raleway', sans-serif;
+  color: #1f1f1f;
+  font-weight: 500;
+  text-align: left;
+}
+
+main #left .left .left--content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 25px;
+}
+
+main #left .left .left--content p {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 28px;
+  color: #4d4d4d;
+  margin-bottom: 13px;
+  font-family: 'Raleway', sans-serif;
+  text-align: left;
+}
+
+main #right .right {
+  padding: 0 100px;
+}
+
+main #right .right h3 {
+  margin-bottom: 30px;
+  line-height: 1.2em;
+  font-size: 24px;
+  font-family: 'Raleway', sans-serif;
+  color: #1f1f1f;
+  font-weight: 500;
+  text-align: right;
+}
+
+main #right .right .right--content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 25px;
+}
+
+main #right .right .right--content p {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 28px;
+  color: #4d4d4d;
+  margin-bottom: 13px;
+  font-family: 'Raleway', sans-serif;
+  text-align: right;
+}
+
+main #definition .definition {
+  padding: 100px 100px 100px 100px;
+}
+
+main #definition .definition h3 {
+  margin-bottom: 30px;
+  line-height: 1.2em;
+  font-size: 24px;
+  font-family: 'Raleway', sans-serif;
+  color: #1f1f1f;
+}
+
+main #definition .definition .definition--block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 50px;
+}
+
+main #definition .definition .definition--block .definition--first {
+  width: 33%;
+}
+
+main #definition .definition .definition--block .definition--first h4 {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  font-family: 'Raleway', sans-serif;
+  color: #1f1f1f;
+  font-size: 18px;
+  line-height: 1.2em;
+}
+
+main #definition .definition .definition--block .definition--first p {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 28px;
+  color: #4d4d4d;
+  margin-bottom: 13px;
+  font-family: 'Raleway', sans-serif;
+  margin-top: 0px;
+}
+
+main #definition .definition .definition--block .definition--second {
+  width: 33%;
+}
+
+main #definition .definition .definition--block .definition--second h4 {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  font-family: 'Raleway', sans-serif;
+  color: #1f1f1f;
+  font-size: 18px;
+  line-height: 1.2em;
+}
+
+main #definition .definition .definition--block .definition--second p {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 28px;
+  color: #4d4d4d;
+  margin-bottom: 13px;
+  font-family: 'Raleway', sans-serif;
+  margin-top: 0px;
+}
+
+main #definition .definition .definition--block .definition--third {
+  width: 33%;
+}
+
+main #definition .definition .definition--block .definition--third h4 {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  font-family: 'Raleway', sans-serif;
+  color: #1f1f1f;
+  font-size: 18px;
+  line-height: 1.2em;
+}
+
+main #definition .definition .definition--block .definition--third p {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 28px;
+  color: #4d4d4d;
+  margin-bottom: 13px;
+  font-family: 'Raleway', sans-serif;
+  margin-top: 0px;
+}
+
+main #quotes .quotes {
+  padding: 0 100px;
+}
+
+main #quotes .quotes h3 {
+  font-family: 'Raleway', sans-serif;
+  color: #1f1f1f;
+  font-size: 24px;
+  line-height: 1.2em;
+  margin-bottom: 30px;
+}
+
+main #quotes .quotes .quotes--block {
+  padding: 30px 50px 30px 30px;
+  background: #f9f9ff;
+  border-left: 2px solid #ff5e13;
+}
+
+main #flag .container {
+  padding: 100px 100px;
+}
+
+main #flag .container .flag h3 {
+  margin-bottom: 30px;
+  line-height: 1.2em;
+  font-size: 24px;
+  font-family: 'Raleway', sans-serif;
+  color: #1f1f1f;
+  font-weight: 500;
+  margin-top: 0;
+}
+
+main #flag .container .flag .flag--list {
+  background: #f9f9ff;
+  padding: 15px 0 30px 0;
+  width: 100%;
+  overflow-x: scroll;
+}
+
+main #flag .container .flag .flag--list .flag-list--one {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main #flag .container .flag .flag--list .flag-list--one .number {
+  color: #415094;
+  line-height: 40px;
+  text-transform: uppercase;
+  font-weight: 500;
+  width: 11.83%;
+  padding-left: 30px;
+  font-family: 'Raleway', sans-serif;
+  font-style: normal;
+}
+
+main #flag .container .flag .flag--list .flag-list--one .img {
+  color: #415094;
+  line-height: 40px;
+  text-transform: uppercase;
+  font-weight: 500;
+  width: 28.07%;
+  font-family: 'Raleway', sans-serif;
+  font-style: normal;
+  font-size: 1rem;
+  text-align: left;
+}
+
+main #flag .container .flag .flag--list .flag-list--one .visits {
+  color: #415094;
+  line-height: 40px;
+  text-transform: uppercase;
+  font-weight: 500;
+  width: 19.74%;
+  font-family: 'Raleway', sans-serif;
+  font-style: normal;
+  font-size: 1rem;
+  text-align: left;
+}
+
+main #flag .container .flag .flag--list .flag-list--one .per {
+  color: #415094;
+  line-height: 40px;
+  text-transform: uppercase;
+  font-weight: 500;
+  width: 40.36%;
+  padding-right: 50px;
+  font-family: 'Raleway', sans-serif;
+  font-style: normal;
+  font-size: 1em;
+  text-align: left;
+}
+
+main #flag .container .flag .flag--list .flag-list--two {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 15px 0;
+  border-top: 1px solid #edf3fd;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  font-family: 'Raleway', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+main #flag .container .flag .flag--list .flag-list--two .number {
+  width: 11.83%;
+  padding-left: 30px;
+  font-family: 'Raleway', sans-serif;
+  font-style: normal;
+}
+
+main #flag .container .flag .flag--list .flag-list--two .img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 28.07%;
+  font-family: 'Raleway', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+}
+
+main #flag .container .flag .flag--list .flag-list--two .img img {
+  margin-right: 15px;
+}
+
+main #flag .container .flag .flag--list .flag-list--two .visits {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 19.74%;
+  font-family: 'Raleway', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+}
+
+main #flag .container .flag .flag--list .flag-list--two .per {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 40.36%;
+  padding-right: 50px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+}
+
+main #flag .container .flag .flag--list .flag-list--two .per .pera {
+  width: 80%;
+  border-radius: 0;
+  background: transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 1rem;
+  overflow: hidden;
+  font-size: .75rem;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  font-family: 'Raleway', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+main #flag .container .flag .flag--list .flag-list--two .per .pera .perab {
+  width: 80%;
+  background-color: #6382e6;
+  height: 5px;
+  line-height: 5px;
+  color: #fff;
+  text-align: center;
+  -webkit-transition: width .6s ease;
+  transition: width .6s ease;
+}
+
+main #flag .container .flag .flag--list .flag-list--three {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 15px 0;
+  border-top: 1px solid #edf3fd;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  font-family: 'Raleway', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+main #flag .container .flag .flag--list .flag-list--three .number {
+  width: 11.83%;
+  padding-left: 30px;
+  font-family: 'Raleway', sans-serif;
+  font-style: normal;
+}
+
+main #flag .container .flag .flag--list .flag-list--three .img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 28.07%;
+  font-family: 'Raleway', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+}
+
+main #flag .container .flag .flag--list .flag-list--three .img img {
+  margin-right: 15px;
+}
+
+main #flag .container .flag .flag--list .flag-list--three .visits {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 19.74%;
+  font-family: 'Raleway', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+}
+
+main #flag .container .flag .flag--list .flag-list--three .per {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 40.36%;
+  padding-right: 50px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+}
+
+main #flag .container .flag .flag--list .flag-list--three .per .pera {
+  width: 80%;
+  border-radius: 0;
+  background: transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 1rem;
+  overflow: hidden;
+  font-size: .75rem;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  font-family: 'Raleway', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+main #flag .container .flag .flag--list .flag-list--three .per .pera .perab {
+  width: 30%;
+  background-color: #e66686;
+  height: 5px;
+  line-height: 5px;
+  color: #fff;
+  text-align: center;
+  -webkit-transition: width .6s ease;
+  transition: width .6s ease;
+}
+
+main #flag .container .flag .flag--list .flag-list--four {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 15px 0;
+  border-top: 1px solid #edf3fd;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  font-family: 'Raleway', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+main #flag .container .flag .flag--list .flag-list--four .number {
+  width: 11.83%;
+  padding-left: 30px;
+  font-family: 'Raleway', sans-serif;
+  font-style: normal;
+}
+
+main #flag .container .flag .flag--list .flag-list--four .img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 28.07%;
+  font-family: 'Raleway', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+}
+
+main #flag .container .flag .flag--list .flag-list--four .img img {
+  margin-right: 15px;
+}
+
+main #flag .container .flag .flag--list .flag-list--four .visits {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 19.74%;
+  font-family: 'Raleway', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+}
+
+main #flag .container .flag .flag--list .flag-list--four .per {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 40.36%;
+  padding-right: 50px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+}
+
+main #flag .container .flag .flag--list .flag-list--four .per .pera {
+  width: 80%;
+  border-radius: 0;
+  background: transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 1rem;
+  overflow: hidden;
+  font-size: .75rem;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  font-family: 'Raleway', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+main #flag .container .flag .flag--list .flag-list--four .per .pera .perab {
+  width: 55%;
+  background-color: #f09359;
+  height: 5px;
+  line-height: 5px;
+  color: #fff;
+  text-align: center;
+  -webkit-transition: width .6s ease;
+  transition: width .6s ease;
+}
+
+main #flag .container .flag .flag--list .flag-list--five {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 15px 0;
+  border-top: 1px solid #edf3fd;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  font-family: 'Raleway', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+main #flag .container .flag .flag--list .flag-list--five .number {
+  width: 11.83%;
+  padding-left: 30px;
+  font-family: 'Raleway', sans-serif;
+  font-style: normal;
+}
+
+main #flag .container .flag .flag--list .flag-list--five .img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 28.07%;
+  font-family: 'Raleway', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+}
+
+main #flag .container .flag .flag--list .flag-list--five .img img {
+  margin-right: 15px;
+}
+
+main #flag .container .flag .flag--list .flag-list--five .visits {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 19.74%;
+  font-family: 'Raleway', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+}
+
+main #flag .container .flag .flag--list .flag-list--five .per {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 40.36%;
+  padding-right: 50px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+}
+
+main #flag .container .flag .flag--list .flag-list--five .per .pera {
+  width: 80%;
+  border-radius: 0;
+  background: transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 1rem;
+  overflow: hidden;
+  font-size: .75rem;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  font-family: 'Raleway', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+main #flag .container .flag .flag--list .flag-list--five .per .pera .perab {
+  width: 60%;
+  background-color: #73fbaf;
+  height: 5px;
+  line-height: 5px;
+  color: #fff;
+  text-align: center;
+  -webkit-transition: width .6s ease;
+  transition: width .6s ease;
+}
+
+main #flag .container .flag .flag--list .flag-list--six {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 15px 0;
+  border-top: 1px solid #edf3fd;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  font-family: 'Raleway', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+main #flag .container .flag .flag--list .flag-list--six .number {
+  width: 11.83%;
+  padding-left: 30px;
+  font-family: 'Raleway', sans-serif;
+  font-style: normal;
+}
+
+main #flag .container .flag .flag--list .flag-list--six .img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 28.07%;
+  font-family: 'Raleway', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+}
+
+main #flag .container .flag .flag--list .flag-list--six .img img {
+  margin-right: 15px;
+}
+
+main #flag .container .flag .flag--list .flag-list--six .visits {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 19.74%;
+  font-family: 'Raleway', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+}
+
+main #flag .container .flag .flag--list .flag-list--six .per {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 40.36%;
+  padding-right: 50px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+}
+
+main #flag .container .flag .flag--list .flag-list--six .per .pera {
+  width: 80%;
+  border-radius: 0;
+  background: transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 1rem;
+  overflow: hidden;
+  font-size: .75rem;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  font-family: 'Raleway', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+main #flag .container .flag .flag--list .flag-list--six .per .pera .perab {
+  width: 40%;
+  background-color: #73fbaf;
+  height: 5px;
+  line-height: 5px;
+  color: #fff;
+  text-align: center;
+  -webkit-transition: width .6s ease;
+  transition: width .6s ease;
+}
+
+main #flag .container .flag .flag--list .flag-list--seven {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 15px 0;
+  border-top: 1px solid #edf3fd;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  font-family: 'Raleway', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+main #flag .container .flag .flag--list .flag-list--seven .number {
+  width: 11.83%;
+  padding-left: 30px;
+  font-family: 'Raleway', sans-serif;
+  font-style: normal;
+}
+
+main #flag .container .flag .flag--list .flag-list--seven .img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 28.07%;
+  font-family: 'Raleway', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+}
+
+main #flag .container .flag .flag--list .flag-list--seven .img img {
+  margin-right: 15px;
+}
+
+main #flag .container .flag .flag--list .flag-list--seven .visits {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 19.74%;
+  font-family: 'Raleway', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+}
+
+main #flag .container .flag .flag--list .flag-list--seven .per {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 40.36%;
+  padding-right: 50px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+}
+
+main #flag .container .flag .flag--list .flag-list--seven .per .pera {
+  width: 80%;
+  border-radius: 0;
+  background: transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 1rem;
+  overflow: hidden;
+  font-size: .75rem;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  font-family: 'Raleway', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+main #flag .container .flag .flag--list .flag-list--seven .per .pera .perab {
+  width: 70%;
+  background-color: #6382e6;
+  height: 5px;
+  line-height: 5px;
+  color: #fff;
+  text-align: center;
+  -webkit-transition: width .6s ease;
+  transition: width .6s ease;
+}
+
+main #flag .container .flag .flag--list .flag-list--eight {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 15px 0;
+  border-top: 1px solid #edf3fd;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  font-family: 'Raleway', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+main #flag .container .flag .flag--list .flag-list--eight .number {
+  width: 11.83%;
+  padding-left: 30px;
+  font-family: 'Raleway', sans-serif;
+  font-style: normal;
+}
+
+main #flag .container .flag .flag--list .flag-list--eight .img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 28.07%;
+  font-family: 'Raleway', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+}
+
+main #flag .container .flag .flag--list .flag-list--eight .img img {
+  margin-right: 15px;
+}
+
+main #flag .container .flag .flag--list .flag-list--eight .visits {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 19.74%;
+  font-family: 'Raleway', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+}
+
+main #flag .container .flag .flag--list .flag-list--eight .per {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 40.36%;
+  padding-right: 50px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+}
+
+main #flag .container .flag .flag--list .flag-list--eight .per .pera {
+  width: 80%;
+  border-radius: 0;
+  background: transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 1rem;
+  overflow: hidden;
+  font-size: .75rem;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  font-family: 'Raleway', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+main #flag .container .flag .flag--list .flag-list--eight .per .pera .perab {
+  width: 30%;
+  background-color: #a367e7;
+  height: 5px;
+  line-height: 5px;
+  color: #fff;
+  text-align: center;
+  -webkit-transition: width .6s ease;
+  transition: width .6s ease;
+}
+
+main #flag .container .flag .flag--list .flag-list--nine {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 15px 0;
+  border-top: 1px solid #edf3fd;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  font-family: 'Raleway', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+main #flag .container .flag .flag--list .flag-list--nine .number {
+  width: 11.83%;
+  padding-left: 30px;
+  font-family: 'Raleway', sans-serif;
+  font-style: normal;
+}
+
+main #flag .container .flag .flag--list .flag-list--nine .img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 28.07%;
+  font-family: 'Raleway', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+}
+
+main #flag .container .flag .flag--list .flag-list--nine .img img {
+  margin-right: 15px;
+}
+
+main #flag .container .flag .flag--list .flag-list--nine .visits {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 19.74%;
+  font-family: 'Raleway', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+}
+
+main #flag .container .flag .flag--list .flag-list--nine .per {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 40.36%;
+  padding-right: 50px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+}
+
+main #flag .container .flag .flag--list .flag-list--nine .per .pera {
+  width: 80%;
+  border-radius: 0;
+  background: transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 1rem;
+  overflow: hidden;
+  font-size: .75rem;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  font-family: 'Raleway', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+main #flag .container .flag .flag--list .flag-list--nine .per .pera .perab {
+  width: 60%;
+  background-color: #e66686;
+  height: 5px;
+  line-height: 5px;
+  color: #fff;
+  text-align: center;
+  -webkit-transition: width .6s ease;
+  transition: width .6s ease;
+}
+
+main #galary {
+  padding: 50px 100px;
+}
+
+main #galary .galary .galary--img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  overflow: hidden;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+main #galary .galary .galary--img .galary-img {
+  width: 33.33%;
+}
+
+main #galary .galary .galary--img .galary-img:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+main #galary .galary .galary--img .galary-img figure {
+  padding: 5px;
+  height: 200px;
+}
+
+main #galary .galary .galary--img .galary-img figure img {
+  width: 100%;
+  height: 100%;
+}
+
+main #galary .galary--content h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a0d01;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  line-height: 1.2em;
+  margin-bottom: 40px;
+}
+
+main #list .container {
+  padding: 50px 100px;
+}
+
+main #list .container .list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+main #list .container .list .list--gallery {
+  width: 30%;
+}
+
+main #list .container .list .list--gallery h3 {
+  font-size: 24px;
+  line-height: 1.2em;
+  font-family: 'Raleway', sans-serif;
+  color: #1f1f1f;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+main #list .container .list .list--gallery .list-gallery--head h1 {
+  color: #828bb2;
+  line-height: 1.2em;
+  font-size: 36px;
+  font-family: 'Raleway', sans-serif;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+main #list .container .list .list--gallery .list-gallery--head h2 {
+  color: #828bb2;
+  line-height: 1.2em;
+  font-size: 30px;
+  font-family: 'Raleway', sans-serif;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+main #list .container .list .list--gallery .list-gallery--head h3 {
+  color: #828bb2;
+  line-height: 1.2em;
+  font-size: 24px;
+  font-family: 'Raleway', sans-serif;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+main #list .container .list .list--gallery .list-gallery--head h4 {
+  color: #828bb2;
+  line-height: 1.2em;
+  font-size: 18px;
+  font-family: 'Raleway', sans-serif;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+main #list .container .list .list--gallery .list-gallery--head h5 {
+  color: #828bb2;
+  line-height: 1.2em;
+  font-size: 16px;
+  font-family: 'Raleway', sans-serif;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+main #list .container .list .list--gallery .list-gallery--head h6 {
+  color: #828bb2;
+  line-height: 1.2em;
+  font-size: 14px;
+  font-family: 'Raleway', sans-serif;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+main #list .container .list .list--un {
+  width: 33%;
+}
+
+main #list .container .list .list--un h3 {
+  font-size: 24px;
+  line-height: 1.2em;
+  font-family: 'Raleway', sans-serif;
+  color: #1f1f1f;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+main #list .container .list .list--un .list-un--list .un--first .un-first--item {
+  position: relative;
+  padding-left: 30px;
+  line-height: 1.82em;
+  font-size: 1rem;
+  color: #212529;
+}
+
+main #list .container .list .list--un .list-un--list .un--first .un-first--item::before {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border: 3px solid #ff5e13;
+  background: #fff;
+  top: 4px;
+  left: 0;
+  border-radius: 50%;
+}
+
+main #list .container .list .list--un .list-un--list .un--first .un-first--item ul li {
+  position: relative;
+  padding-left: 30px;
+  line-height: 1.82em;
+  font-size: 1rem;
+  color: #212529;
+}
+
+main #list .container .list .list--un .list-un--list .un--first .un-first--item ul li::before {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border: 3px solid #ff5e13;
+  background: #fff;
+  top: 4px;
+  left: 0;
+  border-radius: 50%;
+}
+
+main #list .container .list .list--or {
+  width: 33%;
+  margin-left: 40px;
+}
+
+main #list .container .list .list--or h3 {
+  font-size: 24px;
+  line-height: 1.2em;
+  font-family: 'Raleway', sans-serif;
+  color: #1f1f1f;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+main #list .container .list .list--or .list-or--list .or--first .or-first--item {
+  position: relative;
+  list-style-type: decimal-leading-zero;
+  color: #ff5e13;
+  font-weight: 500;
+  line-height: 1.82em;
+}
+
+main #list .container .list .list--or .list-or--list .or--first .or-first--item span {
+  font-weight: 300;
+  color: #828bb2;
+  font-size: 1rem;
+}
+
+main #list .container .list .list--or .list-or--list .or--first .or-first--item ::marker {
+  position: absolute;
+}
+
+main #list .container .list .list--or .list-or--list .or--first .or-first--item ol li {
+  position: relative;
+  list-style-type: lower-alpha;
+  color: #ff5e13;
+  font-weight: 500;
+  line-height: 1.82em;
+  margin-left: 30px;
+}
+
+main #list .container .list .list--or .list-or--list .or--first .or-first--item ol li span {
+  font-weight: 300;
+  color: #828bb2;
+  font-size: 1rem;
+}
+
+main #list .container .list .list--or .list-or--list .or--first .or-first--item ol li ::marker {
+  position: absolute;
+}
+
+main #list .container .list .list--or .list-or--list .or--first .or-first--item ol li ol li {
+  position: relative;
+  list-style-type: lower-roman;
+  color: #ff5e13;
+  font-weight: 500;
+  line-height: 1.82em;
+  margin-left: 30px;
+}
+
+main #list .container .list .list--or .list-or--list .or--first .or-first--item ol li ol li span {
+  font-weight: 300;
+  color: #828bb2;
+  font-size: 1rem;
+}
+
+main #list .container .list .list--or .list-or--list .or--first .or-first--item ol li ol li ::marker {
+  position: absolute;
+}
+
+main #form .container {
+  padding: 50px 100px;
+}
+
+main #form .container .form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+main #form .container .form .form--element {
+  width: 55%;
+}
+
+main #form .container .form .form--element h3 {
+  margin-bottom: 30px;
+  line-height: 1.2em;
+  font-size: 24px;
+  font-family: Raleway, sans-serif;
+  color: #1f1f1f;
+  font-weight: 500;
+}
+
+main #form .container .form .form--element .elements {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+main #form .container .form .form--element .elements input {
+  width: 100%;
+  line-height: 40px;
+  border: none;
+  outline: none;
+  background: #f9f9ff;
+  padding: 0px 20px;
+  overflow: visible;
+  margin: 0px;
+  font-family: inherit;
+  font-size: inherit;
+  margin-bottom: 10px;
+  outline: none;
+}
+
+main #form .container .form .form--element .elements input:focus {
+  border: 2px solid #f0542c;
+}
+
+main #form .container .form .form--element .elements .address {
+  position: relative;
+}
+
+main #form .container .form .form--element .elements .address .icon {
+  position: absolute;
+  left: 20px;
+  top: 0px;
+  line-height: 40px;
+  z-index: 3;
+}
+
+main #form .container .form .form--element .elements .address .icon i {
+  color: #797979;
+}
+
+main #form .container .form .form--element .elements .address input {
+  padding: 0px 40px;
+  outline: none;
+}
+
+main #form .container .form .form--element .elements .address input:focus {
+  border: 2px solid #f0542c;
+}
+
+main #form .container .form .form--element .elements .city {
+  position: relative;
+}
+
+main #form .container .form .form--element .elements .city .icon {
+  position: absolute;
+  left: 20px;
+  top: 0px;
+  line-height: 40px;
+  z-index: 3;
+}
+
+main #form .container .form .form--element .elements .city .icon i {
+  color: #797979;
+}
+
+main #form .container .form .form--element .elements .city input {
+  padding: 0px 40px;
+  outline: none;
+}
+
+main #form .container .form .form--element .elements .city input:focus {
+  border: 2px solid #f0542c;
+}
+
+main #form .container .form .form--element .elements .country {
+  position: relative;
+}
+
+main #form .container .form .form--element .elements .country .icon {
+  position: absolute;
+  left: 20px;
+  top: 0px;
+  line-height: 40px;
+  z-index: 3;
+}
+
+main #form .container .form .form--element .elements .country .icon i {
+  color: #797979;
+}
+
+main #form .container .form .form--element .elements .country input {
+  padding: 0px 40px;
+  outline: none;
+}
+
+main #form .container .form .form--element .elements .country input:focus {
+  border: 2px solid #f0542c;
+}
+
+main #form .container .form .form--element .elements textarea {
+  width: 100%;
+  line-height: 40px;
+  border: none;
+  outline: none;
+  background: #f9f9ff;
+  padding: 0px 20px;
+  height: 100px;
+  resize: none;
+  overflow: auto;
+  margin: 0px;
+  font-family: inherit;
+  font-size: inherit;
+  margin-bottom: 10px;
+}
+
+main #form .container .form .form--element .elements textarea:focus {
+  border: 2px solid #f0542c;
+}
+
+main #form .container .form .form--switch {
+  width: 30%;
+}
+
+main #form .container .form .form--switch h3 {
+  margin-bottom: 30px;
+  line-height: 1.2em;
+  font-size: 24px;
+  font-family: Raleway, sans-serif;
+  color: #1f1f1f;
+  font-weight: 500;
+}
+
+main #form .container .form .form--switch .switches .first {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+main #form .container .form .form--switch .switches .first p {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 28px;
+  color: #4d4d4d;
+  margin-bottom: 13px;
+  font-family: Raleway, sans-serif;
+}
+
+main #form .container .form .form--switch .switches .first .primary--switches {
+  width: 35px;
+  height: 17px;
+  border-radius: 8.5px;
+  background: #f9f9ff;
+  position: relative;
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+}
+
+main #form .container .form .form--switch .switches .first .primary--switches input {
+  position: absolute;
+  inset: 0px;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  padding: 0px;
+  overflow: visible;
+  margin: 0px;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  outline: none;
+}
+
+main #form .container .form .form--switch .switches .first .primary--switches input:focus {
+  border: 2px solid #f0542c;
+}
+
+main #form .container .form .form--switch .switches .first .primary--switches label {
+  position: absolute;
+  inset: 0px;
+  width: 100%;
+  height: 100%;
+  color: #7e7e7e;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+main #form .container .form .form--switch .switches .first .primary--switches label::before {
+  content: "";
+  position: absolute;
+  inset: 0px;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border-radius: 8.5px;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease 0s;
+  transition: all 0.2s ease 0s;
+}
+
+main #form .container .form .form--switch .switches .first .primary--switches label::after {
+  content: "";
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: white;
+  -webkit-transition: all 0.2s ease 0s;
+  transition: all 0.2s ease 0s;
+  cursor: pointer;
+}
+
+main #form .container .form .form--switch .switches .second {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+main #form .container .form .form--switch .switches .second p {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 28px;
+  color: #4d4d4d;
+  margin-bottom: 13px;
+  font-family: Raleway, sans-serif;
+}
+
+main #form .container .form .form--switch .switches .second .primary--switches {
+  width: 35px;
+  height: 17px;
+  border-radius: 8.5px;
+  background: #f9f9ff;
+  position: relative;
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+}
+
+main #form .container .form .form--switch .switches .second .primary--switches input {
+  position: absolute;
+  inset: 0px;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  padding: 0px;
+  overflow: visible;
+  margin: 0px;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  outline: none;
+}
+
+main #form .container .form .form--switch .switches .second .primary--switches input:focus {
+  border: 2px solid #f0542c;
+}
+
+main #form .container .form .form--switch .switches .second .primary--switches label {
+  position: absolute;
+  inset: 0px;
+  width: 100%;
+  height: 100%;
+  color: #7e7e7e;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+main #form .container .form .form--switch .switches .second .primary--switches label::before {
+  content: "";
+  position: absolute;
+  inset: 0px;
+  width: 100%;
+  height: 100%;
+  border-radius: 8.5px;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease 0s;
+  transition: all 0.2s ease 0s;
+  background: #ff5e13;
+}
+
+main #form .container .form .form--switch .switches .second .primary--switches label::after {
+  content: "";
+  position: absolute;
+  top: 1px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: white;
+  -webkit-transition: all 0.2s ease 0s;
+  transition: all 0.2s ease 0s;
+  cursor: pointer;
+}
+
+main #form .container .form .form--switch .switches .third {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+main #form .container .form .form--switch .switches .third p {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 28px;
+  color: #4d4d4d;
+  margin-bottom: 13px;
+  font-family: Raleway, sans-serif;
+}
+
+main #form .container .form .form--switch .switches .third .primary--switches {
+  width: 35px;
+  height: 17px;
+  border-radius: 8.5px;
+  background: #f9f9ff;
+  position: relative;
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+}
+
+main #form .container .form .form--switch .switches .third .primary--switches input {
+  position: absolute;
+  inset: 0px;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  padding: 0px;
+  overflow: visible;
+  margin: 0px;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  outline: none;
+}
+
+main #form .container .form .form--switch .switches .third .primary--switches input:focus {
+  border: 2px solid #f0542c;
+}
+
+main #form .container .form .form--switch .switches .third .primary--switches label {
+  position: absolute;
+  inset: 0px;
+  width: 100%;
+  height: 100%;
+  color: #7e7e7e;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+main #form .container .form .form--switch .switches .third .primary--switches label::before {
+  content: "";
+  position: absolute;
+  inset: 0px;
+  width: 100%;
+  height: 100%;
+  border-radius: 8.5px;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease 0s;
+  transition: all 0.2s ease 0s;
+  background: #4cd3e3;
+}
+
+main #form .container .form .form--switch .switches .third .primary--switches label::after {
+  content: "";
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: white;
+  -webkit-transition: all 0.2s ease 0s;
+  transition: all 0.2s ease 0s;
+  cursor: pointer;
+}
+
+main #form .container .form .boxes h3 {
+  margin-bottom: 30px;
+  line-height: 1.2em;
+  font-size: 24px;
+  font-family: Raleway, sans-serif;
+  color: #1f1f1f;
+  font-weight: 500;
+}
+
+main #form .container .form .boxes .boxes--input .first {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+main #form .container .form .boxes .boxes--input .first input {
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  background: #f9f9ff;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+}
+
+main #form .container .form .boxes .boxes--input .first input:focus {
+  border: 2px solid #f0542c;
+}
+
+main #form .container .form .boxes .boxes--input .first p {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 28px;
+  color: #4d4d4d;
+  margin-bottom: 13px;
+  font-family: Raleway, sans-serif;
+}
+
+main #form .container .form .boxes .boxes--input .second {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+main #form .container .form .boxes .boxes--input .second input {
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  background: #f9f9ff;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+}
+
+main #form .container .form .boxes .boxes--input .second input:focus {
+  border: 2px solid #f0542c;
+}
+
+main #form .container .form .boxes .boxes--input .second p {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 28px;
+  color: #4d4d4d;
+  margin-bottom: 13px;
+  font-family: Raleway, sans-serif;
+}
+
+main #form .container .form .boxes .boxes--input .third {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+main #form .container .form .boxes .boxes--input .third input {
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  background: #f9f9ff;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+}
+
+main #form .container .form .boxes .boxes--input .third input:focus {
+  border: 2px solid #f0542c;
+}
+
+main #form .container .form .boxes .boxes--input .third p {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 28px;
+  color: #4d4d4d;
+  margin-bottom: 13px;
+  font-family: Raleway, sans-serif;
+}
+
+main #form .container .form .boxes .boxes--input .four {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+main #form .container .form .boxes .boxes--input .four input {
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  background: #f9f9ff;
+  position: relative;
+  cursor: not-allowed;
+  z-index: 3;
+  outline: none;
+}
+
+main #form .container .form .boxes .boxes--input .four input:focus {
+  border: 2px solid #f0542c;
+}
+
+main #form .container .form .boxes .boxes--input .four p {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 28px;
+  color: #4d4d4d;
+  margin-bottom: 13px;
+  font-family: Raleway, sans-serif;
+}
+
+main #form .container .form .boxes .boxes--input .five {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+main #form .container .form .boxes .boxes--input .five .tick {
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  background: #f9f9ff;
+  position: relative;
+  cursor: not-allowed;
+}
+
+main #form .container .form .boxes .boxes--input .five .tick input {
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  background: #f9f9ff;
+  position: relative;
+  cursor: not-allowed;
+  overflow: visible;
+  position: absolute;
+  inset: 0px;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  outline: none;
+}
+
+main #form .container .form .boxes .boxes--input .five .tick input:focus {
+  border: 2px solid #f0542c;
+}
+
+main #form .container .form .boxes .boxes--input .five .tick label {
+  background-image: url("./images/tick.png");
+  position: absolute;
+  inset: 0px;
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
+  cursor: pointer;
+  color: #7e7e7e;
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+main #form .container .form .boxes .boxes--input .five p {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 28px;
+  color: #4d4d4d;
+  margin-bottom: 13px;
+  font-family: Raleway, sans-serif;
+}
+
+main #form .container .form .radio h3 {
+  margin-bottom: 30px;
+  line-height: 1.2em;
+  font-size: 24px;
+  font-family: Raleway, sans-serif;
+  color: #1f1f1f;
+  font-weight: 500;
+}
+
+main #form .container .form .radio .radio--input .first {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+main #form .container .form .radio .radio--input .first input {
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  background: #f9f9ff;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+}
+
+main #form .container .form .radio .radio--input .first input:focus {
+  border: 2px solid #f0542c;
+}
+
+main #form .container .form .radio .radio--input .first p {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 28px;
+  color: #4d4d4d;
+  margin-bottom: 13px;
+  font-family: Raleway, sans-serif;
+}
+
+main #form .container .form .radio .radio--input .second {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+main #form .container .form .radio .radio--input .second input {
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  background: #f9f9ff;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+}
+
+main #form .container .form .radio .radio--input .second input:focus {
+  border: 2px solid #f0542c;
+}
+
+main #form .container .form .radio .radio--input .second p {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 28px;
+  color: #4d4d4d;
+  margin-bottom: 13px;
+  font-family: Raleway, sans-serif;
+}
+
+main #form .container .form .radio .radio--input .third {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+main #form .container .form .radio .radio--input .third input {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #f9f9ff;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+}
+
+main #form .container .form .radio .radio--input .third input:focus {
+  border: 2px solid #f0542c;
+}
+
+main #form .container .form .radio .radio--input .third p {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 28px;
+  color: #4d4d4d;
+  margin-bottom: 13px;
+  font-family: Raleway, sans-serif;
+}
+
+main #form .container .form .radio .radio--input .four {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+main #form .container .form .radio .radio--input .four input {
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  background: #f9f9ff;
+  position: relative;
+  cursor: not-allowed;
+  z-index: 3;
+  outline: none;
+}
+
+main #form .container .form .radio .radio--input .four input:focus {
+  border: 2px solid #f0542c;
+}
+
+main #form .container .form .radio .radio--input .four p {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 28px;
+  color: #4d4d4d;
+  margin-bottom: 13px;
+  font-family: Raleway, sans-serif;
+}
+
+main #form .container .form .radio .radio--input .five {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+main #form .container .form .radio .radio--input .five input {
+  width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  background: #f9f9ff;
+  cursor: not-allowed;
+  outline: none;
+}
+
+main #form .container .form .radio .radio--input .five input:focus {
+  border: 2px solid #f0542c;
+}
+
+main #form .container .form .radio .radio--input .five p {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 28px;
+  color: #4d4d4d;
+  margin-bottom: 13px;
+  font-family: Raleway, sans-serif;
+}
+
+@media (max-width: 800px) {
+  body main #text .text {
+    padding: 70px 50px;
+  }
+  body main #text .text p {
+    font-size: 14px;
+  }
+  body main #button .container {
+    padding: 20px 50px;
+  }
+  body main #right .right {
+    padding: 0 25px;
+  }
+  body main #right .right .right--content p {
+    font-size: 14px;
+  }
+  body main #left .left {
+    padding: 0 25px;
+  }
+  body main #left .left .left--content p {
+    font-size: 14px;
+  }
+  body main #definition .definition {
+    padding: 50px 50px;
+  }
+  body main #definition .definition .definition--block {
+    gap: 18px;
+  }
+  body main #definition .definition .definition--block .definition--first p {
+    font-size: 15px;
+    font-weight: 200;
+    line-height: 24px;
+  }
+  body main #definition .definition .definition--block .definition--second p {
+    font-size: 15px;
+    font-weight: 200;
+    line-height: 24px;
+  }
+  body main #definition .definition .definition--block .definition--third p {
+    font-size: 15px;
+    font-weight: 200;
+    line-height: 24px;
+  }
+  body main #quotes .quotes {
+    padding: 0 50px;
+  }
+  body main #flag .container {
+    padding: 50px 40px;
+  }
+  body main #galary {
+    padding: 50px 50px;
+  }
+  body main #list .container {
+    padding: 50px 50px;
+  }
+  body main #list .container .list .list--or {
+    margin-left: 25px;
+  }
+  body main #form .container {
+    padding: 50px 40px;
+  }
+}
+
+@media (max-width: 650px) {
+  body main #text .text {
+    padding: 50px 30px;
+  }
+  body main #text .text p {
+    font-size: 12px;
+  }
+  body main #button .container {
+    padding: 20px 30px;
+  }
+  body main #right .right {
+    padding: 0 20px;
+  }
+  body main #right .right .right--content p {
+    font-size: 12px;
+  }
+  body main #left .left {
+    padding: 0 20px;
+  }
+  body main #left .left .left--content p {
+    font-size: 12px;
+  }
+  body main #definition .definition {
+    padding: 50px 30px;
+  }
+  body main #definition .definition .definition--block {
+    gap: 18px;
+  }
+  body main #definition .definition .definition--block .definition--first p {
+    font-size: 14px;
+    font-weight: 200;
+    line-height: 22px;
+  }
+  body main #definition .definition .definition--block .definition--second p {
+    font-size: 14px;
+    font-weight: 200;
+    line-height: 22px;
+  }
+  body main #definition .definition .definition--block .definition--third p {
+    font-size: 14px;
+    font-weight: 200;
+    line-height: 22px;
+  }
+  body main #quotes .quotes {
+    padding: 0 30px;
+  }
+  body main #flag .container {
+    padding: 50px 30px;
+  }
+  body main #galary {
+    padding: 50px 30px;
+  }
+  body main #list .container {
+    padding: 50px 30px;
+  }
+  body main #list .container .list .list--or {
+    margin-left: 15px;
+  }
+  body main #form .container {
+    padding: 40px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  body main #text .text {
+    padding: 30px 10px;
+  }
+  body main #text .text p {
+    font-size: 11px;
+  }
+  body main #button .container {
+    padding: 20px 10px;
+  }
+  body main #right .right {
+    padding: 0 10px;
+  }
+  body main #right .right .right--content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 0;
+  }
+  body main #right .right .right--content p {
+    font-size: 11px;
+  }
+  body main #right .right .right--content figure {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: end;
+  }
+  body main #left .left {
+    padding: 0 10px;
+  }
+  body main #left .left .left--content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 0;
+  }
+  body main #left .left .left--content p {
+    font-size: 11px;
+  }
+  body main #definition .definition {
+    padding: 30px 10px;
+  }
+  body main #definition .definition .definition--block {
+    gap: 14px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  body main #definition .definition .definition--block .definition--first {
+    width: 100%;
+  }
+  body main #definition .definition .definition--block .definition--first p {
+    font-size: 12px;
+    font-weight: 100;
+    line-height: 20px;
+  }
+  body main #definition .definition .definition--block .definition--second {
+    width: 100%;
+  }
+  body main #definition .definition .definition--block .definition--second p {
+    font-size: 12px;
+    font-weight: 100;
+    line-height: 20px;
+  }
+  body main #definition .definition .definition--block .definition--third {
+    width: 100%;
+  }
+  body main #definition .definition .definition--block .definition--third p {
+    font-size: 12px;
+    font-weight: 100;
+    line-height: 20px;
+  }
+  body main #quotes .quotes {
+    padding: 0 10px;
+  }
+  body main #flag .container {
+    padding: 30px 0px;
+  }
+  body main #galary {
+    padding: 30px 10px;
+  }
+  body main #galary .galary .galary--img .galary-img {
+    width: 100%;
+  }
+  body main #list .container {
+    padding: 30px 10px;
+  }
+  body main #list .container .list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  body main #list .container .list .list--gallery {
+    width: 100%;
+  }
+  body main #list .container .list .list--un {
+    width: 100%;
+  }
+  body main #list .container .list .list--or {
+    width: 100%;
+    margin-left: 50px;
+  }
+  body main #form .container {
+    padding: 30px 10px;
+  }
+  body main #form .container .form {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  body main #form .container .form .form--element {
+    width: 100%;
+  }
+  body main #form .container .form .form--switch {
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=elements.css.map */

@@ -1,0 +1,284 @@
+// Start Header
+header {
+    width: 100%;
+    background: #1a0900;
+    .navBar.active {
+        padding: 24px 0;
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
+        background: #000;
+        transition: all 0.5s;
+  
+      }
+
+    .container {
+        padding: 0 5px;
+
+        // Start NavBar
+        .navBar {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            height: 80px;
+            
+
+            .navbar {
+                // Start Navbar List
+                .navbar--list {
+                    display: flex;
+                    gap: 20px;
+                    // Start Navbar List Item
+                    .navbar-list--item {
+                        a {
+                            position: relative;
+                            font-size: 18px;
+                            font-weight: 400;
+                            text-transform: capitalize;
+                            color: #fff;
+                            font-family: "Paytone One", sans-serif;
+                            cursor: pointer;
+
+                            // NavBar Hover
+                            &:hover {
+                                color: #f2c64d;
+
+                                &::before {
+                                    content: "";
+                                    display: block;
+                                    width: 100%;
+                                    height: 2px;
+                                    background: #000;
+                                    left: 0;
+                                    bottom: -15px;
+                                    position: absolute;
+                                    background: #f2c64d;
+                                }
+                            }
+
+                            i {
+                                font-size: 10px;
+                                text-align: center;
+                                padding-left: 5px;
+                            }
+                        }
+                        // Start Navbar Item Active
+                        .active {
+                            cursor: pointer;
+                            color: #f2c64d;
+                            position: relative;
+
+                            &::before {
+                                content: "";
+                                display: block;
+                                width: 100%;
+                                height: 2px;
+                                background: #000;
+                                left: 0;
+                                bottom: -15px;
+                                position: absolute;
+                                background: #f2c64d;
+                            }
+                        }
+                        // End Navbar List Item
+
+                        // Start Navbar List Item
+                        .down {
+                            position: relative;
+                            display: inline-block;
+
+                            &:hover .down--list {
+                                display: block;
+                            }
+
+                            .down--list {
+                                cursor: pointer;
+                                display: none;
+                                position: absolute;
+                                top: 38px;
+                                background-color: #f1f1f1;
+                                min-width: 160px;
+                                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                                z-index: 2;
+
+                                a {
+                                    color: black;
+                                    padding: 12px 16px;
+                                    text-decoration: none;
+                                    display: block;
+
+                                    &:hover {
+                                        background-color: #ddd
+                                    }
+                                }
+                            }
+                        }
+                        // End Navbar List Item
+                    }
+                    // End Navbar List Item
+                }
+            }
+
+            // End Navbar List
+
+            // Start Sosial
+            .sosial {
+                display: flex;
+                gap: 25px;
+
+                .sosial--icons {
+
+                    //Start Sosial List
+                    .sosial-icons--list {
+                        display: flex;
+                        gap: 25px;
+
+                        // Start Sosial List Item
+                        .sosial-list--item {
+                            cursor: pointer;
+
+                            // Sosial Hover
+                            &:hover {
+                                border: 1px solid #f2c64d;
+                                padding: 7px;
+                                border-radius: 50%;
+                                transform: rotateY(360deg);
+                            }
+
+                            a {
+                                color: #fff;
+                                font-family: "Paytone One", sans-serif;
+
+                                &:hover {
+                                    color: #f2c64d;
+                                }
+                            }
+                        }
+                        // End Sosial List Item
+                    }
+
+                    // End Sosial List
+                }
+
+                // Start Sosial Number
+                .sosial--number {
+                    a {
+                        background: transparent;
+                        padding: 12px 26px;
+                        font-size: 18px;
+                        font-weight: 400;
+                        border: 1px solid #f2c64d;
+                        color: #f2c64d;
+                        border-radius: 30px;
+                        font-family: "Paytone One", sans-serif;
+
+                        // Sosial Number Hover
+                        &:hover {
+                            color: #fff;
+                            background-color: #f2c64d;
+                        }
+                    }
+                }
+
+                // End Sosial Number
+            }
+
+            // End Sosial
+        }
+        // End NavBar
+        .mobile--navbar{
+            display: none;
+        }
+        .mobile-navbar--list{
+            display: none;
+        }
+    }
+}
+// End Header
+
+// Start Media Navbar max-width:800px
+@media (max-width: 800px) {
+    header {
+        position: relative;
+        .container {
+            // Start NavBar
+            .navBar {
+                display: none;
+            }
+            // End NavBar
+
+            // Start Mobile Navbar
+            .mobile--navbar {
+                position: relative;
+                background-color: #4c4c4c;
+                height: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-top: 15px;
+
+                // Start Mobile Navbar Button 
+                .mobile-navbar--btn {
+                    position: absolute;
+                    right: 10px;
+                    border: 1px solid black;
+                    background: black;
+                    padding: 5px;
+                    outline: none;
+
+                    // Start Mobile Navbar Button Text
+                    .mobile-navbar--btn--text {
+                        color: #fff;
+                        line-height: 1.188em;
+                        font-weight: 700;
+                        text-shadow: 0 1px 3px #000;
+                        font-size: 20px;
+                        padding: 0 8px;
+                    }
+                    // End Mobile Navbar Button Text
+
+                    // Start Mobile Navbar Button Icon
+                    .mobile-navbar--btn--icon {
+                        line-height: 1.188em;
+                        color: #fff;
+                        font-weight: 700;
+                        text-shadow: 0 1px 3px #000;
+                        font-size: 18px;
+                    }
+                    // End Mobile Navbar Button Icon
+                }
+                // End Mobile Navbar Button
+            }
+            // End Mobile Navbar
+
+            // Start Mobile Navbar List
+            .mobile-navbar--list{
+                background-color: #4c4c4c;
+                position: absolute;
+                top: -500px;
+                width: 100%;
+                height: auto;
+                transition: .3s;
+                display: block;
+                z-index: 99999;
+                ul{
+                    li{
+                        a{
+                            color: #fff;
+                            font-size: 20px;
+                            line-height: 45px;
+                            letter-spacing: 0.2px;
+                        }
+                    }
+                }
+            }
+            // End Mobile Navbar List
+
+            // Start Navbar-Show
+            .navbar--show{
+                top: 50px;
+            }
+            // End Navbar-Show
+        }
+    }
+}
